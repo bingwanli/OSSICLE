@@ -1,2 +1,12 @@
-<h1>Shoes#index</h1>
-<p>Find me in app/views/shoes/index.html.erb</p>
+<div class="container justify-center text-center">
+
+  <h1 class="my-3">Sneaker Projects</h1>
+
+  <%= link_to "Add Moodboard", shoes_new_path, class: "btn btn-success mb-3 py-2 px-3" %>
+  <%= link_to "Design Sneaker", shoes_new_path, class: "btn btn-success mb-3 py-2 px-3" %>
+  <%= @shoes.shoe_type %>
+  <%= @shoes.each do |shoe| %>
+    <p><%= shoe %></p>
+  <% end %>
+</div>
+
