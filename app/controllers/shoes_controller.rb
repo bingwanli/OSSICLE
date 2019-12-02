@@ -10,7 +10,14 @@ class ShoesController < ApplicationController
   end
 
   def create
-    @shoe = Shoe.find(params[:id])
+    @shoe = Shoe.new(shoes_params)
+  end
+
+private
+
+  def shoes_params
+    params.require(:shoe).permit(:type, :moodboard, :status, :votes)
   end
 
 end
+
