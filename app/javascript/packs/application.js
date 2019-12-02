@@ -1,7 +1,7 @@
 // <<<<<<< HEAD
 import "bootstrap";
 // <<<<<<< HEAD
-=======
+// =======
 // >>>>>>> b89a590e7c4f032ca50a89a9c8facfa33e767847
 // begin plugin code
 /*!
