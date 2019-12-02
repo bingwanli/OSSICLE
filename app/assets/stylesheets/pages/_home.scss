@@ -156,6 +156,24 @@ body
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  height: 740px;
+}
+
+.shoes-banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  height: 740px;
+}
+
+.btn-shoes-banner {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
 .banner h1 {
