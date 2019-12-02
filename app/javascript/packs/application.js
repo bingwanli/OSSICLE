@@ -1,5 +1,5 @@
 import "bootstrap";
-<<<<<<< HEAD
+// <<<<<<< HEAD
 // begin plugin code
 /*!
  * Moving Boxes v2.3.4
@@ -645,4 +645,4 @@ $('#slider').movingBoxes({
 =======
 console.log("hello from application.js")
 
->>>>>>> 35ffcce4d2f199b292291b1417e569498571be82
+// >>>>>>> 35ffcce4d2f199b292291b1417e569498571be82
