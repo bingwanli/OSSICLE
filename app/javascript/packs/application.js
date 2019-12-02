@@ -1,5 +1,3 @@
-import "bootstrap";
-<<<<<<< HEAD
 // begin plugin code
 /*!
  * Moving Boxes v2.3.4
@@ -642,7 +640,3 @@ $('#slider').movingBoxes({
     // panelWidth: 0.5, // Deprecated, but still works in v2.2.2+
 
 });
-=======
-console.log("hello from application.js")
-
->>>>>>> 35ffcce4d2f199b292291b1417e569498571be82

@@ -1,9 +1,11 @@
 <head>
   <title>OSSICLE 👟</title>
 </head>
-<body>
 
-  <div class="banner" style="background-image: url(https://cdn.dribbble.com/users/1166176/screenshots/5887338/800x600.gif?vid=1);">
+<body>
+<%= render "devise/shared/navbar" %>
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.dribbble.com/users/1601802/screenshots/6455062/tike_4.gif);">
     <div class="container">
       <h1>One shoe project</h1>
       <p>Walk, run, design it</p>
@@ -21,49 +23,57 @@
         <h1 class="shoes-banner-title">More shoes projects</h1>
       </div>
       <div>
+        <!--[if lt IE 9]>
+        <link  type="text/css"  href="https://css-tricks.github.com/MovingBoxes/css/movingboxes-ie.css"  rel="stylesheet" media="screen" />
+        <![endif]-->
+
         <ul id="slider">
-          <li>
-              <img src="https://lojavans.vteximg.com.br/arquivos/ids/263570-1000-1000/Z5IV2H-2DHERO.jpg?v=637003518056970000" alt="picture" />
-              <h2>Vans Glitter Authentic</h2>
-              <p>A very short exerpt goes here... <a href="http://flickr.com/photos/justbcuz/112479862/">more</a></p>
-          </li>
 
-          <li>
-              <img src="https://css-tricks.github.com/MovingBoxes/demo/2.jpg" alt="picture" />
-              <h2>Alice News Heading</h2>
-              <p>A very short exerpt goes here... <a href="http://flickr.com/photos/joshuacraig/2698975899/">more</a> and a whole lot more text goes here, so we can see the height adjust.</p>
-          </li>
+            <li>
+                <img src="https://cdn.dribbble.com/users/458522/screenshots/6034458/nike_air_jordan_i.jpg" alt="picture" />
+                <h2>Nike Cool</h2>
+                <p>A very short exerpt goes here... <a href="http://flickr.com/photos/justbcuz/112479862/">more</a></p>
+            </li>
 
-          <li>
-              <img src="https://css-tricks.github.com/MovingBoxes/demo/3.jpg" alt="picture" />
-              <h2>Yin News Heading</h2>
-              <p>A very short exerpt goes here... <a href="http://flickr.com/photos/ruudvanleeuwen/468309897/">more</a></p>
-          </li>
+            <li>
+                <img src="https://www.forstepstyle.com/wp-content/uploads/2019/04/19105-xnxqtk-600x400.jpg" alt="picture" />
+                <h2>Vans Pride</h2>
+                <p>A very short exerpt goes here... <a href="http://flickr.com/photos/joshuacraig/2698975899/">more</a> and a whole lot more text goes here, so we can see the height adjust.</p>
+            </li>
 
-          <li>
-              <img src="https://css-tricks.github.com/MovingBoxes/demo/4.jpg" alt="picture" />
-              <h2>Gerri News Heading</h2>
-              <p>A very short exerpt goes here... <a href="http://flickr.com/photos/emikohime/294092478/">more</a></p>
-          </li>
+            <li>
+                <img src="https://sneakernews.com/wp-content/uploads/2019/02/adidas-ultra-boost-game-of-thrones-white-walkers-EE3708-3.jpg" alt="picture" />
+                <h2>Adidas Boost</h2>
+                <p>A very short exerpt goes here... <a href="http://flickr.com/photos/ruudvanleeuwen/468309897/">more</a></p>
+            </li>
 
-          <li>
-              <img src="https://css-tricks.github.com/MovingBoxes/demo/5.jpg" alt="picture" />
-              <h2>Tabitha News Heading</h2>
-              <p>A very short exerpt goes here... <a href="http://www.flickr.com/photos/fensterbme/499006584/">more</a></p>
-          </li>
+            <li>
+                <img src="https://images.journeys.com/images/products/1_553956_ZM_BLACK.JPG" alt="picture" />
+                <h2>New Balance</h2>
+                <p>A very short exerpt goes here... <a href="http://flickr.com/photos/emikohime/294092478/">more</a></p>
+            </li>
 
-          <li>
-              <img src="https://css-tricks.github.com/MovingBoxes/demo/6.jpg" alt="picture" />
-              <h2>Mary News Heading</h2>
-              <p>A very short exerpt goes here... <a href="#">more</a></p>
-          </li>
+            <li>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQovrpf5CGW4Sv9cboIQxzyzj2Gy5-gUvC4iBdNl8CKm9zL2TXJ&s" alt="picture" />
+                <h2>Oasics basic</h2>
+                <p>A very short exerpt goes here... <a href="http://www.flickr.com/photos/fensterbme/499006584/">more</a></p>
+            </li>
 
-          <li>
-              <img src="https://css-tricks.github.com/MovingBoxes/demo/7.jpg" alt="picture" />
-              <h2>Kitty News Heading</h2>
-              <p>A very short exerpt goes here... <a href="#">more</a></p>
-          </li>
+            <li>
+                <img src="https://assets.reebok.com/images/w_600,f_auto,q_auto:sensitive,fl_lossy/88f58ebf747f44e4bc2da782008b6fc5_9366/Classic_Leather_White_2232_51_standard.jpg" alt="picture" />
+                <h2>Reebok White</h2>
+                <p>A very short exerpt goes here... <a href="#">more</a></p>
+            </li>
+
+            <li>
+                <img src="https://media.sivasdescalzo.com/media/catalog/product/A/O/AO4971-002_sivasdescalzo-nike-AIR_MAX_270_REACT-1560347902-1.jpg" alt="picture" />
+                <h2>Naike Air Max</h2>
+                <p>A very short exerpt goes here... <a href="#">more</a></p>
+            </li>
+
         </ul>
+
+
       </div>
       <div>
         <a class="btn btn-shoes-banner" href="#">Check it out</a>
@@ -80,7 +90,11 @@
       <a href="#"><i class="fab fa-linkedin"></i></a>
     </div>
     <div class="footer-copyright">
-      This are the shoes of the site 👟.
+      This are the shoes of the site 👟👟.
     </div>
   </div>
+
+
 </body>
+
+
