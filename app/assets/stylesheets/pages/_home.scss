@@ -163,9 +163,10 @@ body
 .shoes-banner {
   background-size: cover;
   background-position: center;
-  height: 775px;
+  height: 710px;
   text-align: center;
   padding: 20px;
+  background-color: #232323;
 }
 
 .shoes-banner-title {
@@ -215,10 +216,15 @@ html{
   scroll-behavior: smooth;
 }
 
-.btn-ghost:hover {
-  opacity: 1;
+.btn-shoes-banner:hover {
+  color: yellow;
+  opacity: 0.5;
 }
 
+.btn-ghost:hover {
+  opacity: 0.8;
+
+}
 .btn-shoes-banner {
   color: yellow;
   border: 1px solid yellow;
@@ -323,6 +329,7 @@ change .current class name using plugin option, currentPanel : 'current' */
 
 .mb-inside * {
   max-width: 100%;
+  padding: 5px;
 }
 
 
