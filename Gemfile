@@ -16,6 +16,7 @@ gem 'uglifier'
 gem 'devise'
 gem 'faker'
 gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
 gem 'rails-ujs'
 
 
