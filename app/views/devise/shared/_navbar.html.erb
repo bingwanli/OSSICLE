@@ -1,5 +1,5 @@
 <div id="main-navbar">
-  <div>
+ <!--  <div>
     <nav role="navigation">
       <div id="menuToggle">
 
@@ -9,18 +9,14 @@
         <span></span>
 
         <ul id="menu">
-          <%= link_to "Home", "#", class: "dropdown-item" %>
-          <%= link_to "Shoes", "#", class: "dropdown-item" %>
+          <%= link_to "Home", root_path, class: "dropdown-item" %>
+          <%= link_to "Shoes", moodboards_path, class: "dropdown-item" %>
           <%= link_to "Contact", "#", class: "dropdown-item" %>
           <%= link_to "Profile", "#", class: "dropdown-item" %>
-          <!-- <a href="#"><li>Home</li></a>
-          <a href="#"><li>Shoes</li></a>
-          <a href="#"><li>Contact</li></a>
-          <a href="#"><li>Profile</li></a> -->
         </ul>
       </div>
     </nav>
-  </div>
+  </div> -->
 
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,13 +27,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Login</a>
+          <%= link_to "Login", new_user_session_path, class:"nav-link" %>
+          <!-- <a class="nav-link" href="">Login</a> -->
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">|</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">SignUp</a>
+          <%= link_to "SignUp", new_user_registration_path, class:"nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://img.icons8.com/pastel-glyph/2x/person-male.png" />
