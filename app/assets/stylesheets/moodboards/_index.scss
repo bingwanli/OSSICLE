@@ -17,15 +17,18 @@ body
 }
 
 .inside-banner {
-  height:200px;
+  height: 200px;
   width: 100%;
-  background-image: url(https://image.freepik.com/free-vector/team-workers-producing-sneakers_1262-20692.jpg);
+  background-image: url(https://i.pinimg.com/originals/ba/5d/d4/ba5dd445504b80df283e90ebadb57d0b.gif);
   // opacity: 0.6;
   text-align: center;
   color: #FFD700;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: cover;
+  background-position:100%;
+  font-weight: bold;
 }
 
 .shoes-cards {
