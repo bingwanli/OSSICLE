@@ -20,7 +20,6 @@ console.log("hello from application.js")
 // >>>>>>> b89a590e7c4f032ca50a89a9c8facfa33e767847
 
 // TEST==========================================================================================================
-
 dragElement(document.getElementById("mydiv"));
 
 function dragElement(elmnt) {
@@ -63,6 +62,3 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
-
-
-
