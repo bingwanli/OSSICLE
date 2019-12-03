@@ -15,6 +15,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'devise'
 gem 'faker'
+gem 'rails-ujs'
 gem 'bootstrap', '~> 4.3.1'
 
 
