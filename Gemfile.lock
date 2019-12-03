@@ -52,6 +52,10 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
+    bootstrap (4.3.1)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 1.14.3, < 2)
+      sassc-rails (>= 2.0.0)
     builder (3.2.3)
     byebug (11.0.1)
     carrierwave (1.3.1)
@@ -92,6 +96,10 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
+    jquery-rails (4.3.5)
+      rails-dom-testing (>= 1, < 3)
+      railties (>= 4.2.0)
+      thor (>= 0.14, < 2.0)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -117,6 +125,7 @@ GEM
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
     pg (0.21.0)
+    popper_js (1.14.5)
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -128,8 +137,6 @@ GEM
     puma (4.3.0)
       nio4r (~> 2.0)
     rack (2.0.7)
-    rack-proxy (0.6.5)
-      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.4)
@@ -150,6 +157,8 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.3.0)
       loofah (~> 2.3)
+    rails-ujs (0.1.0)
+      railties (>= 3.1)
     railties (5.2.4)
       actionpack (= 5.2.4)
       activesupport (= 5.2.4)
@@ -208,10 +217,6 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
-    webpacker (4.2.0)
-      activesupport (>= 4.2)
-      rack-proxy (>= 0.6.1)
-      railties (>= 4.2)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
@@ -224,18 +229,21 @@ DEPENDENCIES
   autoprefixer-rails
   bootsnap
   carrierwave (~> 1.2)
+  bootstrap (~> 4.3.1)
   cloudinary (~> 1.9.1)
   devise
   dotenv-rails
   faker
   font-awesome-sass (~> 5.6.1)
   jbuilder (~> 2.0)
+  jquery-rails
   listen (~> 3.0.5)
   pg (~> 0.21)
   pry-byebug
   pry-rails
   puma
   rails (= 5.2.4)
+  rails-ujs
   redis
   sassc-rails
   simple_form
@@ -243,7 +251,6 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   uglifier
   web-console (>= 3.3.0)
-  webpacker
 
 RUBY VERSION
    ruby 2.6.3p62
