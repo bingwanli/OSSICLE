@@ -15,6 +15,11 @@ class MoodboardsController < ApplicationController
 
   def create
     @moodboard = Moodboard.new(moodboards_params)
+    @moodboard.user = current_user
+    if @moodboard.save
+      redirect_to moodboard_path(@moodboard)
+    else render :new
+    end
   end
 
   def edit
@@ -34,7 +39,7 @@ private
   end
 
   def moodboards_params
-    params.require(:moodboard).permit(:shoe_type, :is_finished, :detail, :votes)
+    params.require(:moodboard).permit(:shoe_type, :is_finished, :detail, :votes, :photo, :title)
   end
 end
 
