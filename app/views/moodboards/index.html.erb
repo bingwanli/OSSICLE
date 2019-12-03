@@ -2,25 +2,25 @@
 
   <h1 class="my-3">Sneaker Project</h1>
 
-<%= link_to "Add Moodboard", shoes_new_path, class: "btn btn-secondary mb-3 py-2 px-3" %>
-<%= link_to "Design Sneaker", shoes_new_path, class: "btn btn-secondary mb-3 py-2 px-3" %>
+<%= link_to "Add Moodboard", moodboards_new_path, class: "btn btn-secondary mb-3 py-2 px-3" %>
+<%= link_to "Design Sneaker", moodboards_new_path, class: "btn btn-secondary mb-3 py-2 px-3" %>
 
   <div class="row mx-auto justify-content-center">
-      <% @shoes.each do |shoe| %>
+      <% @moodboards.each do |moodboard| %>
 
         <div class="card shadow-sm p-3 mb-5 rounded m-1" style="width: 20rem;">
           <div class="card-img-top">
 
           </div>
           <div class="card-body">
-            <h5 class="card-title"><%= shoe.shoe_type %></h5>
+            <h5 class="card-title"><%= moodboard.shoe_type %></h5>
             <p class="card-text">Ipsum Lorem</p>
-            <%= link_to "More", shoes_new_path, class: "btn btn-primary" %>
+            <%= link_to "More", moodboards_new_path, class: "btn btn-primary" %>
           </div>
           <div class="social">
             <ul>
               <li><i class="far fa-thumbs-up"></i></li>
-              <li><%= shoe.votes %></li>
+              <li><%= moodboard.votes %></li>
               <li></li>
             </ul>
           </div>
