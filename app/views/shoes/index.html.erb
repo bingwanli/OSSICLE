@@ -1,14 +1,12 @@
 <div class="container mx-auto text-center">
-
-  <h1 class="my-3">Sneaker Project</h1>
-
-<%= link_to "Add Moodboard", shoes_new_path, class: "btn btn-secondary mb-3 py-2 px-3" %>
-<%= link_to "Design Sneaker", shoes_new_path, class: "btn btn-secondary mb-3 py-2 px-3" %>
+  <div class="banner">
+    <h1>Sneaker Project</h1>
+  </div>
 
   <div class="row mx-auto justify-content-center">
       <% @shoes.each do |shoe| %>
 
-        <div class="card shadow-sm p-3 mb-5 rounded m-1" style="width: 20rem;">
+        <div class="card shadow-sm p-3 mb-3 rounded m-3" style="width: 20rem;">
           <div class="card-img-top">
 
           </div>
@@ -17,8 +15,8 @@
             <p class="card-text">Ipsum Lorem</p>
             <%= link_to "More", shoes_new_path, class: "btn btn-primary" %>
           </div>
-          <div class="social">
-            <ul>
+          <div>
+            <ul class="social">
               <li><i class="far fa-thumbs-up"></i></li>
               <li><%= shoe.votes %></li>
               <li></li>

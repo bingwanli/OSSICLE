@@ -1,17 +1,22 @@
-// Import page-specific CSS files here.
+_shoesindex
 
-body {
+body
+{
+  margin: 0;
+  padding: 0;
 
-background-color: rgb(245,245,245)
+  /* make it look decent enough */
+  background: #39393A;
+  color: #cdcdcd;
+  font-family: "Avenir Next", "Avenir", sans-serif;
 }
 
-
-.social ul {
-  list-style: none;
-  text-align: right;
-  background-color: rgba(240,240,240, .5)
+.social {
+  list-style-type: none;
+  display: flex;
 }
 
-.social ul li {
-  display: inline-block;
+.banner {
+  height:300px;
+  width: 100%;
 }
