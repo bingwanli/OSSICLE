@@ -152,12 +152,40 @@ body
   transform: none;
 }
 
+.navbar-lewagon {
+  justify-content: space-between;
+  position:absolute;
+  background: none;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+  background: none;
+  color: black;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+
 .banner {
   background-size: cover;
   background-position: center;
   padding: 150px 0;
   height: 790px;
   text-align: center;
+}
+
+#main-navbar {
+  text-color: white;
+  font-size: 16px;
+  display: flex;
+  list-style-type: none;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  // padding-right: 10px;
+  position: relative;
 }
 
 .shoes-banner {
