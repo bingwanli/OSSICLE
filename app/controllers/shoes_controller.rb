@@ -5,6 +5,7 @@ class ShoesController < ApplicationController
 
   def create
     @shoe = Shoe.create(shoes_params)
+    @shoe.save
   end
 
   def index
