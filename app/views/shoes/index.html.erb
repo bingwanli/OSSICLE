@@ -1,19 +1,22 @@
-<div class="container mx-auto text-center">
-  <div class="banner">
+  <div class="inside-banner mx-auto justify-content-center" >
     <h1>Sneaker Project</h1>
   </div>
+
+<div class="container mx-auto text-center">
 
   <div class="row mx-auto justify-content-center">
       <% @shoes.each do |shoe| %>
 
-        <div class="card shadow-sm p-3 mb-3 rounded m-3" style="width: 20rem;">
+        <div class="shoes-cards" style="width: 20rem;">
           <div class="card-img-top">
-
+            <img src="" alt="">
           </div>
           <div class="card-body">
             <h5 class="card-title"><%= shoe.shoe_type %></h5>
             <p class="card-text">Ipsum Lorem</p>
-            <%= link_to "More", shoes_new_path, class: "btn btn-primary" %>
+            <div class="btn-shoes-cards">
+              <%= link_to "+", shoes_new_path %>
+            </div>
           </div>
           <div>
             <ul class="social">
