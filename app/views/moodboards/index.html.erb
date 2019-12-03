@@ -2,8 +2,8 @@
 
   <h1 class="my-3">Sneaker Project</h1>
 
-<%= link_to "Add Moodboard", moodboards_new_path, class: "btn btn-secondary mb-3 py-2 px-3" %>
-<%= link_to "Design Sneaker", moodboards_new_path, class: "btn btn-secondary mb-3 py-2 px-3" %>
+<%= link_to "Add Moodboard", new_moodboard_path, class: "btn btn-secondary mb-3 py-2 px-3" %>
+<%= link_to "Design Sneaker", moodboards_path, class: "btn btn-secondary mb-3 py-2 px-3" %>
 
   <div class="row mx-auto justify-content-center">
       <% @moodboards.each do |moodboard| %>
@@ -15,7 +15,7 @@
           <div class="card-body">
             <h5 class="card-title"><%= moodboard.shoe_type %></h5>
             <p class="card-text">Ipsum Lorem</p>
-            <%= link_to "More", moodboards_new_path, class: "btn btn-primary" %>
+            <%= link_to "More", moodboard_path(moodboard.id), class: "btn btn-primary" %>
           </div>
           <div class="social">
             <ul>
