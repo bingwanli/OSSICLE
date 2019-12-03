@@ -7,7 +7,7 @@ body
   padding: 0;
 
   /* make it look decent enough */
-  background: #232323;
+  background: #F6F6F6çq;
   color: #cdcdcd;
   font-family: "Avenir Next", "Avenir", sans-serif;
 }
@@ -28,7 +28,7 @@ body
 #menuToggle a
 {
   text-decoration: none;
-  color: #232323;
+  color: #39393A;
 
   transition: color 0.3s ease;
 }
@@ -95,7 +95,7 @@ body
 {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
+  background: #39393A;
 }
 
 /*
@@ -152,6 +152,23 @@ body
   transform: none;
 }
 
+.navbar-lewagon {
+  justify-content: space-between;
+  position:absolute;
+  background: none;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+  background: none;
+  color: black;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+
 .banner {
   background-size: cover;
   background-position: center;
@@ -160,13 +177,24 @@ body
   text-align: center;
 }
 
+#main-navbar {
+  text-color: white;
+  font-size: 16px;
+  display: flex;
+  list-style-type: none;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  // padding-right: 10px;
+  position: relative;
+}
+
 .shoes-banner {
   background-size: cover;
   background-position: center;
-  height: 710px;
+  height: 740px;
   text-align: center;
   padding: 20px;
-  background-color: #232323;
+  background-color: #39393A;
 }
 
 .shoes-banner-title {
@@ -174,15 +202,29 @@ body
   margin-bottom: 5px;
 }
 
+#banner-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
 .artist-card {
-  color: yellow;
-  border-color: yellow;
+  color: #FFD700;
+  border-color: #FFD700;
   font-weight: lighter;
   opacity: 0.6;
   transition: opacity 0.3s ease;
   background-color: black;
   margin-top:50px;
+  height:150px;
+  width:150px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%
 }
 
 .banner h1 {
@@ -202,14 +244,17 @@ body
 }
 
 .btn-ghost {
+  background-color: #FFD700;
   color: black;
-  background-color: yellow;
-  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
   transition: opacity 0.3s ease;
-  margin-top: 280px;
-  width: 200px;
+  margin-top: 250px;
+}
+
+.btn-ghost:hover {
+  opacity: 0.8;
 }
 
 html{
@@ -217,22 +262,18 @@ html{
 }
 
 .btn-shoes-banner:hover {
-  color: yellow;
+  color: #FFD700;
   opacity: 0.5;
 }
 
-.btn-ghost:hover {
-  opacity: 0.8;
-
-}
 .btn-shoes-banner {
-  color: yellow;
-  border: 1px solid yellow;
+  color: #FFD700;
+  border: 1px solid #FFD700;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
   transition: opacity 0.3s ease;
-  margin-top: auto;
+  margin-bottom: 20px;
 }
 
 .shoes-banner-title {
@@ -241,7 +282,7 @@ html{
 
 
 .footer {
-  background: yellow;
+  background: #FFD700;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -338,7 +379,7 @@ a.mb-scrollButtons {
   display: block;
   width: 45px;
   height: 58px;
-  background: yellow;
+  background: #FFD700;
   position: absolute;
   top: 50%;
   margin-top: -29px; /* if you change the arrow images, you may have to adjust this (1/2 height of arrow image) */
@@ -358,7 +399,8 @@ a.mb-scrollButtons.mb-left {
 a.mb-scrollButtons.mb-right {
   background-position: right top;
   right: -45px;
-  // background: url(../images/right-arrow.png) no-repeat;
+  // background: url(..assets/images/right-arrow.png) no-repeat;
+
 }
 a.mb-scrollButtons.mb-left:hover {
   background-position: left bottom;
@@ -374,7 +416,7 @@ a.mb-scrollButtons.disabled {
 .mb-controls {
   margin: 0 auto;
   text-align: center;
-  background: #232323;
+  background: #39393A;
   position: relative;
   z-index: 100;
 }
@@ -395,7 +437,7 @@ a.mb-scrollButtons.disabled {
   color: white;
 }
 .mb-active-slider .mb-controls {
-  background: #232323;
+  background: #39393A;
 }
 /* threedee */
 .csstransforms {

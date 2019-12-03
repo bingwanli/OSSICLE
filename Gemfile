@@ -18,6 +18,7 @@ gem 'faker'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'rails-ujs'
+gem 'cloudinary', '~> 1.9.1'
 
 
 group :development do
@@ -32,3 +33,5 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
 end
+
+

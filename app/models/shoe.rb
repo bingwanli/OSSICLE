@@ -1,7 +1,7 @@
 class Shoe < ApplicationRecord
+  belongs_to :moodboard
   belongs_to :user
-  validates :shoe_type, presence: true
-  validates :moodboard, presence: true, uniqueness: true
-  validates :status, inclusion: { in: [0, 1] }
   validates :votes, numericality: { only_integer: true, allow_nil: true }
+  validates :photo_url, presence: true, uniqueness: true
+  validates :detail, presence: true
 end
