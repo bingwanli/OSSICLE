@@ -1,17 +1,67 @@
 // Import page-specific CSS files here.
 
-body {
-
-background-color: rgb(245,245,245)
+body
+{
+  margin: 0;
+  padding: 0;
+  background: #F6F6F6;
+  /* make it look decent enough */
+  background: #F6F6F6;
+  color: #FFD700;
+  font-family: "Avenir Next", "Avenir", sans-serif;
 }
 
-
-.social ul {
-  list-style: none;
-  text-align: right;
-  background-color: rgba(240,240,240, .5)
+.social {
+  list-style-type: none;
+  display: flex;
 }
 
-.social ul li {
-  display: inline-block;
+.inside-banner {
+  height:200px;
+  width: 100%;
+  background-image: url(https://image.freepik.com/free-vector/team-workers-producing-sneakers_1262-20692.jpg);
+  // opacity: 0.6;
+  text-align: center;
+  color: #FFD700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shoes-cards {
+  color: #39393A ;
+  border-radius: 10px;
+  border: 3px solid #F6F6F6;
+  background-color: #F6F6F6;
+  margin: 15px;
+  box-shadow: 2px 2px 3px grey;
+}
+
+.btn-shoes-cards {
+  border: 3px solid #F6F6F6;
+  padding: 8px 14px;
+  width: 50px;
+  background-color: #FFD700;
+  border-radius: 50px;
+  transition: opacity 0.3s ease;
+  color: black;
+}
+
+.card-img-top {
+  width: 310px;
+  height:220px
+
+}
+
+.btn-shoes-cards:hover {
+  opacity: 0.8;
+  text-decoration: none !important;
+}
+
+.social {
+  color: lightblue;
+}
+
+.row {
+  margin-top: 50px;
 }
