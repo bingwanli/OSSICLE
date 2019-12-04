@@ -8,6 +8,7 @@
        <li>Shoe: <%= @moodboard.shoe_type %></li>
        <li>Votes: <%= @moodboard.votes %></li>
        <li>Description: <%= @moodboard.detail %></li>
+       <li class="my-3"><%= link_to "Design Shoe", new_moodboard_shoe_path(@moodboard.id), class: "btn-shoes-pop-up"  %></li>
      </ul>
    </div>
   </div>
