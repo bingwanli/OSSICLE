@@ -19,19 +19,21 @@ body
   color: lightblue;
 }
 
-.inside-banner {
+.banner {
   height: 200px;
   width: 100%;
   background-image: url(https://i.pinimg.com/originals/6b/7c/72/6b7c72de8c9fdb5bbeb5feca23fcc74e.gif);
   // opacity: 0.6;
   text-align: center;
   color: #F6F6F6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-size: cover;
   background-position:100%;
   font-weight: bold;
+}
+
+.inside-banner {
+  vertical-align: middle;
+
 }
 
 .shoes-cards {
