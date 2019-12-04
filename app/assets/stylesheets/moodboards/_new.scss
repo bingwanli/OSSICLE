@@ -1,9 +1,14 @@
   .demo-droppable {
-    background: #08c;
-    color: #fff;
+    background: #fff;
+    color: #39393a;
     padding: 100px 0;
     text-align: center;
   }
   .demo-droppable.dragover {
     background: #00CC71;
+  }
+
+  .form-container {
+    margin: 100px;
+    text-align: center;
   }
