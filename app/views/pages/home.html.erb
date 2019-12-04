@@ -2,18 +2,15 @@
   <title></title>
 </head>
 
-<body>
-<%= render "devise/shared/navbar" %>
 
-
-
+<!-- top banner -->
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.dribbble.com/users/1601802/screenshots/6455062/tike_4.gif);">
-
-    <div class="container">
-      <h1>One shoe project</h1>
-      <p>Walk, run, design it</p>
+      <div class="container">
+        <h1>Ossicle</h1>
+        <p>Share Your Moodboard</p>
+        <p>Get Your Design</p>
       <div id="banner-card">
-        <a class="btn artist-card">Check project</a>
+        <%= link_to "Check Moodboards", moodboards_path, class:"btn artist-card" %>
       </div>
       <div>
         <a class="btn btn-ghost" href="#section2">Get down <br> ▽</a>
@@ -21,69 +18,70 @@
     </div>
   </div>
 
-    <div class="shoes-banner" id="section2">
-      <div>
-        <h1 class="shoes-banner-title">More shoes projects</h1>
-      </div>
-      <div>
-        <!--[if lt IE 9]>
-        <link  type="text/css"  href="https://css-tricks.github.com/MovingBoxes/css/movingboxes-ie.css"  rel="stylesheet" media="screen" />
-        <![endif]-->
+<!-- separator -->
+  <div class="shoes-banner" id="section2">
+    <div>
+      <h1 class="shoes-banner-title">The Top Designs</h1>
+    </div>
+  <div>
 
-        <ul id="slider">
+<!-- design flash cards -->
+  <ul id="slider">
 
-            <li>
-                <img src="https://cdn.dribbble.com/users/1755078/screenshots/6530828/__19_2x_4x.png" alt="picture" />
-                <h2>Nike Cool</h2>
-                <p>A very short exerpt goes here... <a href="http://flickr.com/photos/justbcuz/112479862/">more</a></p>
-            </li>
+    <li>
+      <img src="https://cdn.dribbble.com/users/1755078/screenshots/6530828/__19_2x_4x.png" alt="picture" />
+      <h2>Nike Cool</h2>
+      <p>A very short exerpt goes here... <a href="http://flickr.com/photos/justbcuz/112479862/">more</a></p>
+    </li>
 
-            <li>
-                <img src="https://cdn.dribbble.com/users/722193/screenshots/3823426/patika.png" alt="picture" />
-                <h2>Vans Pride</h2>
-                <p>A very short exerpt goes here... <a href="http://flickr.com/photos/joshuacraig/2698975899/">more</a> and a whole lot more text goes here, so we can see the height adjust.</p>
-            </li>
+    <li>
+      <img src="https://cdn.dribbble.com/users/722193/screenshots/3823426/patika.png" alt="picture" />
+      <h2>Vans Pride</h2>
+      <p>A very short exerpt goes here... <a href="http://flickr.com/photos/joshuacraig/2698975899/">more</a> and a whole lot more text goes here, so we can see the height adjust.</p>
+    </li>
 
-            <li>
-                <img src="https://cdn.dribbble.com/users/3460/screenshots/1585477/dropkicks.png" alt="picture" />
-                <h2>Adidas Boost</h2>
-                <p>A very short exerpt goes here... <a href="http://flickr.com/photos/ruudvanleeuwen/468309897/">more</a></p>
-            </li>
+    <li>
+      <img src="https://cdn.dribbble.com/users/3460/screenshots/1585477/dropkicks.png" alt="picture" />
+      <h2>Adidas Boost</h2>
+      <p>A very short exerpt goes here... <a href="http://flickr.com/photos/ruudvanleeuwen/468309897/">more</a></p>
+    </li>
 
-            <li>
-                <img src="https://cdn.dribbble.com/users/180906/screenshots/4824215/screen_shot_2018-07-13_at_4.05.03_pm.png" alt="picture" />
-                <h2>New Balance</h2>
-                <p>A very short exerpt goes here... <a href="http://flickr.com/photos/emikohime/294092478/">more</a></p>
-            </li>
+    <li>
+      <img src="https://cdn.dribbble.com/users/180906/screenshots/4824215/screen_shot_2018-07-13_at_4.05.03_pm.png" alt="picture" />
+      <h2>New Balance</h2>
+      <p>A very short exerpt goes here... <a href="http://flickr.com/photos/emikohime/294092478/">more</a></p>
+    </li>
 
-            <li>
-                <img src="https://cdn.dribbble.com/users/1651856/screenshots/3432820/converse_final.png" alt="picture" />
-                <h2>Oasics basic</h2>
-                <p>A very short exerpt goes here... <a href="http://www.flickr.com/photos/fensterbme/499006584/">more</a></p>
-            </li>
+    <li>
+      <img src="https://cdn.dribbble.com/users/1651856/screenshots/3432820/converse_final.png" alt="picture" />
+      <h2>Oasics basic</h2>
+      <p>A very short exerpt goes here... <a href="http://www.flickr.com/photos/fensterbme/499006584/">more</a></p>
+    </li>
 
-            <li>
-                <img src="https://cdn.dribbble.com/users/1084817/screenshots/3144166/yeezyv2_dribbble.jpg" alt="picture" />
-                <h2>Reebok White</h2>
-                <p>A very short exerpt goes here... <a href="#">more</a></p>
-            </li>
+    <li>
+      <img src="https://cdn.dribbble.com/users/1084817/screenshots/3144166/yeezyv2_dribbble.jpg" alt="picture" />
+      <h2>Reebok White</h2>
+      <p>A very short exerpt goes here... <a href="#">more</a></p>
+    </li>
 
-            <li>
-                <img src="https://cdn.dribbble.com/users/1084817/screenshots/3144144/adidas_dribbble.jpg" alt="picture" />
-                <h2>Nike Air Max</h2>
-                <p>A very short exerpt goes here... <a href="#">more</a></p>
-            </li>
+    <li>
+      <img src="https://cdn.dribbble.com/users/1084817/screenshots/3144144/adidas_dribbble.jpg" alt="picture" />
+      <h2>Nike Air Max</h2>
+       <p>A very short exerpt goes here... <a href="#">more</a></p>
+    </li>
 
-        </ul>
+  </ul>
 
-
-      </div>
-      <div>
-        <%= link_to "Check it out", moodboards_path, class:"btn btn-shoes-banner" %>
-      </div>
   </div>
 
+<!-- view more button -->
+  <div>
+    <%= link_to "View More", moodboards_path, class:"btn btn-shoes-banner" %>
+  </div>
 
+</div>
+
+<!-- footer -->
   <div class="footer">
     <div class="footer-links">
       <a href="#"><i class="fab fa-github"></i></a>
@@ -93,7 +91,7 @@
       <a href="#"><i class="fab fa-linkedin"></i></a>
     </div>
     <div class="footer-copyright">
-      This are the shoes of the site 👟👟.
+     Love your inspirations, love your design 👟👟.
     </div>
   </div>
 
