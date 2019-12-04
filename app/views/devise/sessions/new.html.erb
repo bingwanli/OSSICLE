@@ -1,49 +1,53 @@
-<!-- wfwfwefw -->
-
 <body>
 
-  <nav role="navigation">
-    <div id="menuToggle">
+<!-- nav bar -->
+<nav role="navigation">
+  <div id="menuToggle">
 
-      <input type="checkbox" />
-      <span></span>
-      <span></span>
-      <span></span>
+    <input type="checkbox" />
+    <span></span>
+    <span></span>
+    <span></span>
 
 
-      <ul id="menu">
-        <a href="#"><li>Home</li></a>
-        <a href="#"><li>Shoes</li></a>
-        <a href="#"><li>Contact</li></a>
-        <a href="#"><li>Profile</li></a>
-        <a href="https://erikterwan.com/" target="_blank"><li>Show me more</li></a>
-      </ul>
-    </div>
-  </nav>
+    <ul id="menu">
+    <a href="#"><li>Home</li></a>
+    <a href="#"><li>Shoes</li></a>
+    <a href="#"><li>Contact</li></a>
+    <a href="#"><li>Profile</li></a>
+    <a href="https://erikterwan.com/" target="_blank"><li>Show me more</li></a>
+    </ul>
+  </div>
+</nav>
 
-<div class="bottom-container">
+<!-- top banner -->
+<div class="top-banner mx-auto justify-content-center" >
+  <h1>Ossicle</h1>
+</div>
 
-  <div class="login-menu">
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-inputs">
-          <%= f.input :email,
-                      required: false,
-                      autofocus: true,
-                      input_html: { autocomplete: "email" } %>
-          <%= f.input :password,
-                      required: false,
-                      input_html: { autocomplete: "current-password" } %>
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-        </div>
+<!-- login form -->
+<div class="form-container">
 
-        <div class="log-butt">
-          <div class="btn btn-2">
-            <%= f.button :submit, "Log in" %>
-          </div>
-        </div>
+  <div class="login-form">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :email,
+          required: false,
+          autofocus: true,
+          input_html: { autocomplete: "email" } %>
+        <%= f.input :password,
+          required: false,
+          input_html: { autocomplete: "current-password" } %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      </div>
 
-      <% end %>
-    </div>
+  <div class="btn btn-2">
+    <%= f.button :submit, "Log in" %>
+  </div>
+
+
+  <% end %>
+  </div>
 
 </div>
 
