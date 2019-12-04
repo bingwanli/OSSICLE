@@ -195,6 +195,7 @@ body
   text-align: center;
   padding: 20px;
   background-color: #39393A;
+  max-width: 100%
 }
 
 .shoes-banner-title {
@@ -216,7 +217,7 @@ body
   opacity: 0.6;
   transition: opacity 0.3s ease;
   background-color: black;
-  margin-top:50px;
+  margin-top:30px;
   height:150px;
   width:150px;
   border-radius: 100%;
@@ -229,7 +230,7 @@ body
 
 .artist-card:hover {
   opacity:0.8;
-  font-color: #FFD700;
+  color: #FFD700;
   animation: shake 0.5s;
   animation-iteration-count: infinite;
 }
@@ -250,18 +251,27 @@ body
 
 .banner h1 {
   margin: 0;
-  color: white;
+  color: #FFD802;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 55px;
   font-weight: bold;
+  // -webkit-text-stroke: 0.1px #FFD802;
+  // border-color: white;
+  text-shadow:
+         3px 3px 0 #000,
+       -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+         1px 1px 0 #000;
 }
 
 .banner p {
   font-size: 20px;
   color: white;
-  opacity: .7;
+  opacity: 0.9;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   margin-bottom: 80;
+  font-weight: lighter;
 }
 
 .btn-ghost {
@@ -271,7 +281,7 @@ body
   border-radius: 50px;
   font-weight: lighter;
   transition: opacity 0.3s ease;
-  margin-top: 280px;
+  margin-top: 240px;
   font-weight: bold;
 }
 
