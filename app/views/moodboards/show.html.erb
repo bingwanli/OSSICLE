@@ -1,70 +1,47 @@
-<<<<<<< HEAD
-<!-- <div id="mydiv">
-  <div id="mydivheader">MOVEBOARD</div>
-=======
 
-<div id="mydiv">
-  <div id="mydivheader"><%= @moodboard.title.upcase %></div>
->>>>>>> 7e4be896c3b35b85d49366546e37282d7cd9da5e
-</div>
--->
+<%= render "/devise/shared/navbar" %>
 
-<body>
  <div>
   <div class="text_container">
    <div class="bg-text">MOODBOARD</div>
    <div>
      <ul class="attributes">
-       <li>title</li>
-       <li>user_id</li>
-       <li>shoe_type</li>
-       <li>votes</li>
-       <li>photo</li>
-       <li>detail</li>
+       <li>Title: <%= @moodboard.title %></li>
+       <li>Poster: <%= @moodboard.user.name %></li>
+       <li>Shoe: <%= @moodboard.shoe_type %></li>
+       <li>Votes: <%= @moodboard.votes %></li>
+       <li>Description: <%= @moodboard.detail %></li>
+       <li class="my-3"><%= link_to "Design Shoe", new_moodboard_shoe_path(@moodboard.id), class: "btn-shoes-pop-up"  %></li>
      </ul>
    </div>
-<!--    <a class="btn-shoes-pop-up" href="#check-shoes">walk down</a>
- -->  </div>
+  </div>
  </div>
 
 
  <div>
-   <div class="parallax bg-image img1"></div>
-   <div class="parallax bg-image img2"></div>
-   <div class="parallax bg-image img3"></div>
-   <div class="parallax bg-image img4"></div>
-   <div class="parallax bg-image img5"></div>
-   <div class="parallax bg-image img6"></div>
- </div>
-
-
-</body>
-
-<div id="check-shoes">
-  <h2>Check the shoes projects</h2>
-  <div class="box">
-    <a class="btn-shoes-pop-up" href="#popup1">Shoe me</a>
-  </div>
-
-<<<<<<< HEAD
-  <div id="popup1" class="overlay">
-    <div class="popup">
-      <h2>NEW SHOES</h2>
-      <a class="close" href="#">&times;</a>
-      <div class="content">
-        <img src="https://cdn.dribbble.com/users/458522/screenshots/6157567/snickers_set_no.1.jpg" alt="Shoes">
-      </div>
-    </div>
-  </div>
-=======
-<div>
-
     <div class="parallax bg-image" style="background-image: url('<%= cl_image_path @moodboard.photos %>')"></div>
     <div class="bg-image img2"></div>
     <div class="parallax bg-image img3"></div>
     <div class="bg-image img4"></div>
     <div class="parallax bg-image img5"></div>
     <div class="parallax bg-image img6"></div>
-
->>>>>>> 7e4be896c3b35b85d49366546e37282d7cd9da5e
 </div>
+
+
+<div id="check-shoes">
+  <h2 style="text-align: center">Check the shoes projects</h2>
+  <div class="box">
+    <a class="btn-shoes-pop-up" href="#popup1">Shoe me</a>
+  </div>
+
+  <div id="popup1" class="overlay">
+    <div class="popup">
+      <h2>NEW SHOES</h2>
+      <a class="close" href="#">&times;</a>
+      <div class="content">
+        <img style="max-width:100%"src="https://cdn.dribbble.com/users/458522/screenshots/6157567/snickers_set_no.1.jpg" alt="Shoes">
+      </div>
+    </div>
+  </div>
+</div>
+
