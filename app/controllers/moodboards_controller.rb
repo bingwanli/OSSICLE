@@ -2,7 +2,7 @@ class MoodboardsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @moodboards = Moodboard.all
+    @moodboards = Moodboard.order(votes: :desc)
   end
 
   def show
@@ -15,10 +15,21 @@ class MoodboardsController < ApplicationController
 
   def create
     @moodboard = Moodboard.new(moodboards_params)
+    @moodboard.user = current_user
+    if @moodboard.save
+      redirect_to moodboard_path(@moodboard)
+    else render :new
+    end
   end
 
   def edit
     set_moodboard
+  end
+
+  def addvote
+    set_moodboard
+    @moodboard.increment(:votes, 1)
+    @moodboard.save
   end
 
   def update
@@ -34,7 +45,7 @@ private
   end
 
   def moodboards_params
-    params.require(:moodboard).permit(:shoe_type, :is_finished, :detail, :votes)
+    params.require(:moodboard).permit(:shoe_type, :is_finished, :detail, :votes, :photo, :title)
   end
 end
 

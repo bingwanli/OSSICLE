@@ -1,1 +1,19 @@
-<h1> hello </h1>
+
+<div id="mydiv">
+  <div id="mydivheader"><%= @moodboard.title.upcase %></div>
+</div>
+
+<div>
+  <div class="bg-text">MOODBOARD</div>
+</div>
+
+<div>
+
+    <div class="parallax bg-image" style="background-image: url('<%= cl_image_path @moodboard.photo %>')"></div>
+    <div class="bg-image img2"></div>
+    <div class="parallax bg-image img3"></div>
+    <div class="bg-image img4"></div>
+    <div class="parallax bg-image img5"></div>
+    <div class="parallax bg-image img6"></div>
+
+</div>
