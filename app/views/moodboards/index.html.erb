@@ -25,7 +25,10 @@
 
           <div>
             <ul class="social">
-              <li><i class="far fa-thumbs-up"></i></li>
+              <li><%= link_to moodboard_path(moodboard.id), method: :patch do %>
+                <i class="far fa-thumbs-up"></i>
+                <% end %>
+              </li>
               <li><%= moodboard.votes %></li>
               <li></li>
             </ul>

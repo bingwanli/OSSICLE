@@ -2,7 +2,7 @@ class MoodboardsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @moodboards = Moodboard.all
+    @moodboards = Moodboard.order(votes: :desc)
   end
 
   def show
@@ -24,6 +24,12 @@ class MoodboardsController < ApplicationController
 
   def edit
     set_moodboard
+  end
+
+  def addvote
+    set_moodboard
+    @moodboard.increment(:votes, 1)
+    @moodboard.save
   end
 
   def update
