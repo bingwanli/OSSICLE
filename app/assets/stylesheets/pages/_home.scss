@@ -7,7 +7,7 @@ body
   padding: 0;
 
   /* make it look decent enough */
-  background: #F6F6F6çq;
+  background: #F6F6F6;
   color: #cdcdcd;
   font-family: "Avenir Next", "Avenir", sans-serif;
 }
@@ -227,6 +227,27 @@ body
   border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%
 }
 
+.artist-card:hover {
+  opacity:0.8;
+  font-color: #FFD700;
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
 .banner h1 {
   margin: 0;
   color: white;
@@ -244,17 +265,19 @@ body
 }
 
 .btn-ghost {
-  background-color: #FFD700;
-  color: black;
+  // background-color: #FFD700;
+  // color: black;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
   transition: opacity 0.3s ease;
-  margin-top: 250px;
+  margin-top: 280px;
+  font-weight: bold;
 }
 
 .btn-ghost:hover {
   opacity: 0.8;
+  color: #FFD700;
 }
 
 html{
@@ -377,8 +400,8 @@ change .current class name using plugin option, currentPanel : 'current' */
 /*** Left & Right Navigation Arrows ***/
 a.mb-scrollButtons {
   display: block;
-  width: 45px;
-  height: 58px;
+  width: 25px;
+  height: 25px;
   background: #FFD700;
   position: absolute;
   top: 50%;
@@ -388,7 +411,7 @@ a.mb-scrollButtons {
   outline: 0;
   border: 0;
   opacity: 0.6;
-  // border-radius: 30% 70% 20% 40%
+  // border-radius: 100%
   border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%
 }
 a.mb-scrollButtons.mb-left {

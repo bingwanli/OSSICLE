@@ -4,7 +4,7 @@
 @import "config/bootstrap_variables";
 
 // External libraries
-@import "bootstrap/scss/bootstrap";
+@import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
@@ -13,4 +13,5 @@
 @import "pages/index";
 @import "devise/sessions/new";
 @import "moodboards/index";
+@import "moodboards/show";
 

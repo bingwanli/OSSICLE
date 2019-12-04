@@ -1,0 +1,79 @@
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image {
+  /* Full height */
+  height: 50%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax {
+  height: 500px;
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* Images used */
+.img1 { background-image: url("https://cdn.dribbble.com/users/1552574/screenshots/6988320/media/f9a1a5ee2f8de0fc10a8be484a49f61d.jpg"); }
+.img2 { background-image: url("https://cdn.dribbble.com/users/2008861/screenshots/6531289/aza-windows.gif"); }
+.img3 { background-image: url("https://cdn.dribbble.com/users/548267/screenshots/8698151/media/3195a2a35662f4cc6fce8f91f4c22de1.jpg");}
+.img4 { background-image: url("https://cdn.dribbble.com/users/1265144/screenshots/3933872/v02_dribbble_2.gif"); }
+.img5 { background-image: url("https://cdn.dribbble.com/users/44134/screenshots/8613764/media/8d819026c843be77a1c76be12c2f3971.jpg"); }
+.img6 { background-image: url("https://cdn.dribbble.com/users/573876/screenshots/8751097/media/bcec9909a583f6443e12f2f67660e815.jpg"); }
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  font-size: 80px;
+  border: 10px solid #f1f1f1;
+  position: fixed; /* Stay fixed */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 600px;
+  padding: 20px;
+  text-align: center;
+}
+
+#mydiv {
+  position: absolute;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  font-size: 80px;
+  border: 10px solid #f1f1f1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 600px;
+  padding: 20px;
+  text-align: center;
+}
+
+#mydivheader {
+  // padding: 10px;
+  cursor: pointer;
+  // z-index: 10;
+  // background-color: #2196F3;
+  color: #FFD700
+}
+
+

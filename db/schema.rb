@@ -10,19 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_060719) do
+ActiveRecord::Schema.define(version: 2019_12_04_030311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "moodboards", force: :cascade do |t|
     t.string "shoe_type"
-    t.boolean "is_finished"
-    t.integer "votes"
+    t.boolean "is_finished", default: false
+    t.integer "votes", default: 0
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "detail"
+    t.string "title"
+    t.string "photo"
     t.index ["user_id"], name: "index_moodboards_on_user_id"
   end
 
@@ -36,6 +38,33 @@ ActiveRecord::Schema.define(version: 2019_12_03_060719) do
     t.datetime "updated_at", null: false
     t.index ["moodboard_id"], name: "index_shoes_on_moodboard_id"
     t.index ["user_id"], name: "index_shoes_on_user_id"
+  end
+
+  create_table "taggings", id: :serial, force: :cascade do |t|
+    t.integer "tag_id"
+    t.string "taggable_type"
+    t.integer "taggable_id"
+    t.string "tagger_type"
+    t.integer "tagger_id"
+    t.string "context", limit: 128
+    t.datetime "created_at"
+    t.index ["context"], name: "index_taggings_on_context"
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+    t.index ["taggable_id", "taggable_type", "context"], name: "taggings_taggable_context_idx"
+    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy"
+    t.index ["taggable_id"], name: "index_taggings_on_taggable_id"
+    t.index ["taggable_type"], name: "index_taggings_on_taggable_type"
+    t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type"
+    t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
+  end
+
+  create_table "tags", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer "taggings_count", default: 0
+    t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,4 +87,5 @@ ActiveRecord::Schema.define(version: 2019_12_03_060719) do
   add_foreign_key "moodboards", "users"
   add_foreign_key "shoes", "moodboards"
   add_foreign_key "shoes", "users"
+  add_foreign_key "taggings", "tags"
 end
