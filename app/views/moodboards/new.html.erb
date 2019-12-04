@@ -1,6 +1,5 @@
 
 <!-- nav bar -->
-
 <%= simple_form_for @moodboard do |f| %>
   <%= f.input :title %>
   <%= f.input :detail %>
@@ -10,7 +9,9 @@
 
   <%= f.submit "add moodboard", class: "btn btn-primary" %>
 <% end %>
-<!--
+
+
+
 <div class="demo-droppable">
   <p>Drag files here or click to upload</p>
 <input type="file" multiple="true" style="display: none;"></div>
@@ -20,7 +21,7 @@
     function triggerCallback(e, callback) {
       if(!callback || typeof callback !== 'function') {
         return;
-=======
+
 <div>
     <nav role="navigation">
       <div id="menuToggle">
@@ -50,14 +51,13 @@
         color: #39393a;
         padding: 100px 0;
         text-align: center;
->>>>>>> 6baefc76bb6c02f4ac4e4ee6d3943224dd7ecf96
       }
       .demo-droppable.dragover {
         background: #00CC71;
       }
     </style>
 
-    <!-- upload area -->
+    <!-- upload area
     <div class="demo-droppable">
       <p>Drag files here or click to upload</p>
       <p>(Recommend 1600 x 1200 size up to 10 MB)</p>
@@ -126,19 +126,7 @@
         })(this);
       </script>
 
-    <!-- mood form -->
-    <div class="mood form">
 
-      <%= simple_form_for @moodboard do |f| %>
-        <%= f.input :title %>
-        <%= f.input :detail %>
-        <%= f.input :shoe_type %>
-        <%= f.input :photo %>
-        <%= f.submit "Share!", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
-  <!--
   <div class="demo-droppable">
     <p>Drag files here or click to upload</p>
   <input type="file" multiple="true" style="display: none;"></div>
@@ -208,5 +196,4 @@
     <%= f.input :shoe_type %>
     <%= f.button :submit %>
   <% end %>
-   -->
 </div>
