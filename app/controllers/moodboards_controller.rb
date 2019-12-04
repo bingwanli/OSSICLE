@@ -45,7 +45,7 @@ private
   end
 
   def moodboards_params
-    params.require(:moodboard).permit(:shoe_type, :is_finished, :detail, :votes, :photo, :title)
+    params.require(:moodboard).permit(:shoe_type, :is_finished, :detail, :votes, :photos, :title)
   end
 end
 

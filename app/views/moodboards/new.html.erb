@@ -5,7 +5,9 @@
   <%= f.input :title %>
   <%= f.input :detail %>
   <%= f.input :shoe_type %>
-  <%= f.input :photo %>
+  <%= f.input :photos, multiple: true %>
+
+
   <%= f.submit "add moodboard", class: "btn btn-primary" %>
 <% end %>
 <!--

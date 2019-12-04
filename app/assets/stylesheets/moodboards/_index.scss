@@ -14,6 +14,9 @@ body
 .social {
   list-style-type: none;
   display: flex;
+  padding: 0px 0px;
+  margin: 0px 0px;
+  color: lightblue;
 }
 
 .inside-banner {
@@ -36,8 +39,30 @@ body
   border-radius: 10px;
   border: 3px solid #F6F6F6;
   background-color: #F6F6F6;
-  margin: 15px;
-  box-shadow: 2px 2px 3px grey;
+  padding: 0px 0px;
+  margin: 15px 5px;
+  box-shadow: 2px 2px 3px rgb(200,200,200);
+}
+
+.card-body {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F6F6F6;
+}
+
+
+.cloudimg {
+border-radius: 10px;
+width: 100%;
+max-height: 220px;
 }
 
 .btn-shoes-cards {
@@ -48,6 +73,11 @@ body
   border-radius: 50px;
   transition: opacity 0.3s ease;
   color: black;
+  justify-content: center;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .card-img-top {
@@ -58,16 +88,13 @@ body
 
 .btn-shoes-cards:hover {
   opacity: 0.8;
-  text-decoration: none !important;
 }
 
-.social {
-  color: lightblue;
-}
 
 .row {
   margin-top: 50px;
 }
+
 
 // test=====
 
