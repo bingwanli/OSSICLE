@@ -3,6 +3,7 @@ body, html {
   height: 100%;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -13,46 +14,89 @@ body, html {
   /* Full height */
   height: 50%;
   /* Center and scale the image nicely */
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.btn-shoes-pop-up {
+  color: black;
+  background: #FFD700;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 140px;
+  margin: 25px;
+  // position: absolute;
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.attributes {
+  color: white;
+  display: inline;
+  list-style: none;
+  padding: 25px;
+
+}
+
+
+.btn-shoes-pop-up:hover {
+  background: none;
+  text-decoration: none;
+  color: #FFD700;
+  border: 1px solid #FFD700;
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
 .parallax {
-  height: 500px;
+  height: 400px;
   background-attachment: fixed;
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
 }
 /* Images used */
-.img1 { background-image: url("https://cdn.dribbble.com/users/1552574/screenshots/6988320/media/f9a1a5ee2f8de0fc10a8be484a49f61d.jpg"); }
-.img2 { background-image: url("https://cdn.dribbble.com/users/2008861/screenshots/6531289/aza-windows.gif"); }
-.img3 { background-image: url("https://cdn.dribbble.com/users/548267/screenshots/8698151/media/3195a2a35662f4cc6fce8f91f4c22de1.jpg");}
-.img4 { background-image: url("https://cdn.dribbble.com/users/1265144/screenshots/3933872/v02_dribbble_2.gif"); }
-.img5 { background-image: url("https://cdn.dribbble.com/users/44134/screenshots/8613764/media/8d819026c843be77a1c76be12c2f3971.jpg"); }
-.img6 { background-image: url("https://cdn.dribbble.com/users/573876/screenshots/8751097/media/bcec9909a583f6443e12f2f67660e815.jpg"); }
+.img1 {
+  background-image: url("https://cdn.dribbble.com/users/2643208/screenshots/6809225/solar_system_2.gif");
+  display: flex;
+  text-align: left;
+  justify-content: left;
+}
+.img2 { background-image: url("https://cdn.dribbble.com/users/89889/screenshots/6066977/basicincome-timokuilder-dribbble.jpg"); }
+.img3 { background-image: url("https://cdn.dribbble.com/users/902546/screenshots/6299865/artboard_1_copy_2x2.png");}
+.img4 { background-image: url("https://cdn.dribbble.com/users/637758/screenshots/5437439/keyboard_1600_.png"); }
+.img5 { background-image: url("https://cdn.dribbble.com/users/371094/screenshots/6211063/someethingelse_copy.jpg"); }
+.img6 { background-image: url("https://cdn.dribbble.com/users/236204/screenshots/3928889/lunar_wireless_scene_11.gif"); }
 
 /* Position text in the middle of the page/image */
 .bg-text {
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
   color: white;
   font-weight: bold;
   font-size: 80px;
-  border: 10px solid #f1f1f1;
-  position: fixed; /* Stay fixed */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 600px;
-  padding: 20px;
-  text-align: center;
 }
 
+
 #mydiv {
-  position: absolute;
+  position: absolute !important;
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
   color: white;
@@ -76,4 +120,102 @@ body, html {
   color: #FFD700
 }
 
+// test===================================================popup
 
+
+.box {
+  margin: 0 auto;
+  padding: 35px;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  height: auto;
+  width: 85%;
+  position: relative;
+  z-index: 10;
+  // transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  // overflow: auto;
+}
+
+.check-shoes {
+  text-align: center;
+  padding: 125px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.text_container {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  border: 10px solid #f1f1f1;
+  position: absolute; /* 'fixed' to Stay fixed */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 600px;
+  height:400px;
+  padding: 20px;
+  text-align: center;
+}
+
+
+
+// @media screen and (max-width: 700px){
+//   .box{
+//     width: 70%;
+//   }
+//   .popup{
+//     width: 70%;
+//   }
+// }
