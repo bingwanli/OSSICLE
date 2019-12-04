@@ -1,5 +1,4 @@
 
-<%= render "/devise/shared/navbar" %>
 
  <div>
   <div class="text_container">
@@ -11,7 +10,7 @@
        <li>Shoe: <%= @moodboard.shoe_type %></li>
        <li>Votes: <%= @moodboard.votes %></li>
        <li>Description: <%= @moodboard.detail %></li>
-       <li class="my-3"><%= link_to "Design Shoe", new_moodboard_shoe_path(@moodboard.id), class: "btn-shoes-pop-up"  %></li>
+       <li class="my-3"><%= link_to "Design Shoe", new_moodboard_shoe_path(@moodboard.id), class: "form-btn"  %></li>
      </ul>
    </div>
   </div>
@@ -31,7 +30,7 @@
 <div id="check-shoes">
   <h2 style="text-align: center">Check the shoes projects</h2>
   <div class="box">
-    <a class="btn-shoes-pop-up" href="#popup1">Shoe me</a>
+    <a class="form-btn" href="#popup1">Shoe me</a>
   </div>
 
   <div id="popup1" class="overlay">

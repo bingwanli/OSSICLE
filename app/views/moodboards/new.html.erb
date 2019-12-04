@@ -1,5 +1,13 @@
-<!-- nav bar -->
 <div>
+  <div class="inside-banner" style="background-image:url('https://cdn.dribbble.com/users/146798/screenshots/4085472/dribbble.gif')">
+    <h1>New Moodboard</h1>
+
+  </div>
+</div>
+
+
+<!-- nav bar -->
+<!-- <div>
     <nav role="navigation">
       <div id="menuToggle">
         <input type="checkbox" />
@@ -14,7 +22,8 @@
         </ul>
       </div>
     </nav>
-</div>
+</div> -->
+
 <div class="background">
   <div class='form-container'>
     <style type="text/css">
@@ -35,11 +44,13 @@
         <%= f.input :title %>
         <%= f.input :detail %>
         <%= f.input :shoe_type %>
-        <%= f.input :photos, class: "btn-shoes-pop-up" %>
+        <%= f.input :photos, class: "form-btn" %>
 
-        <%= f.submit "Share!", class: "btn-shoes-pop-up" %>
+        <%= f.submit "Share!", class: "form-btn" %>
       <% end %>
     </div>
+  </div>
+</div>
 
     <!-- upload area -->
 
@@ -108,5 +119,5 @@
       });
     })(this);
   </script>
-
 </div>
+
