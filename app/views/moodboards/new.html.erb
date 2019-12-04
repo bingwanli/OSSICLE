@@ -1,50 +1,22 @@
-
 <!-- nav bar -->
-<%= simple_form_for @moodboard do |f| %>
-  <%= f.input :title %>
-  <%= f.input :detail %>
-  <%= f.input :shoe_type %>
-  <%= f.input :photos, multiple: true %>
-
-
-  <%= f.submit "add moodboard", class: "btn btn-primary" %>
-<% end %>
-
-
-
-<div class="demo-droppable">
-  <p>Drag files here or click to upload</p>
-<input type="file" multiple="true" style="display: none;"></div>
-<div class="output"></div>
-<script type="text/javascript">
-  (function(window) {
-    function triggerCallback(e, callback) {
-      if(!callback || typeof callback !== 'function') {
-        return;
-
 <div>
     <nav role="navigation">
       <div id="menuToggle">
-
         <input type="checkbox" />
         <span></span>
         <span></span>
         <span></span>
-
         <ul id="menu">
           <%= link_to "Home", root_path, class: "dropdown-item" %>
           <%= link_to "Inspirations", moodboards_path, class: "dropdown-item" %>
-          <%= link_to "Create Moodboard", "#", class: "dropdown-item" %>
+          <%= link_to "Create Moodboard", new_moodboard_path, class: "dropdown-item" %>
           <%= link_to "Login", "#", class: "dropdown-item" %>
         </ul>
       </div>
     </nav>
-  </div>
-
-<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.dribbble.com/users/902546/screenshots/8725302/6_4x.png);">
-
+</div>
+<div class="background">
   <div class='form-container'>
-
     <style type="text/css">
       .demo-droppable {
         background: #fff;
@@ -57,13 +29,17 @@
       }
     </style>
 
-    <!-- upload area
-    <div class="demo-droppable">
+    <!-- mood form -->
+    <div class="mood form">
+      <%= simple_form_for @moodboard do |f| %>
+        <%= f.input :title %>
+        <%= f.input :detail %>
+        <%= f.input :shoe_type %>
+        <div class="demo-droppable">
       <p>Drag files here or click to upload</p>
       <p>(Recommend 1600 x 1200 size up to 10 MB)</p>
       <input type="file" multiple="true" style="display: none;">
     </div>
-
     <div class="output"></div>
       <script type="text/javascript">
         (function(window) {
@@ -126,7 +102,14 @@
         })(this);
       </script>
 
+  </div>
+        <%= f.submit "Share!", class: "btn btn-primary" %>
+      <% end %>
+    </div>
 
+    <!-- upload area -->
+
+  <!--
   <div class="demo-droppable">
     <p>Drag files here or click to upload</p>
   <input type="file" multiple="true" style="display: none;"></div>
@@ -191,9 +174,9 @@
       });
     })(this);
   </script>
-
   <%= simple_form_for @moodboard do |f| %>
     <%= f.input :shoe_type %>
     <%= f.button :submit %>
   <% end %>
+   -->
 </div>
