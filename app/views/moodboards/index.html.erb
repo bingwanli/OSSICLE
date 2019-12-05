@@ -20,7 +20,7 @@
         <div class="shoes-cards" >
 
           <div class="card-img-top">
-            <%= cl_image_tag moodboard.photos, :gravity=>"north_west", :crop => "lfill", class: "cloudimg" %>
+            <%= cl_image_tag moodboard.moodboard_attachments.first.image, :gravity=>"north_west", :crop => "lfill", class: "cloudimg" %>
           </div>
 
           <div class="card-body">
