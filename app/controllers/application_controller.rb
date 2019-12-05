@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
     # NEED TO ADD BIO AND PORTFOLIO FOR DESIGNERS LATER
     devise_parameter_sanitizer.permit(:sign_up, keys: [:prof_pic, :name, :portfolio, :is_designer])
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:prof_pic, :is_designer])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:prof_pic, :is_designer, :portfolio])
   end
 end

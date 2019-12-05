@@ -27,6 +27,6 @@ class ShoesController < ApplicationController
   private
 
   def shoes_params
-    params.require(:shoe).permit(:user_id, :moodboard_id, :votes, :photo_url, :detail)
+    params.require(:shoe).permit(:user_id, :moodboard_id, :votes, :shoe_photo, :detail)
   end
 end

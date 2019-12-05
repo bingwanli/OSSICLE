@@ -1,19 +1,27 @@
 <!-- nav bar -->
 <%= render "devise/shared/navbar" %>
 
-<% if user_signed_in? && current_user.is_designer %>
+<% if user_signed_in? && current_user.portfolio != nil %>
 
   <!-- new shoe form -->
   <div class="container mx-auto mt-3">
     <h1 class="text-center">Design Your Cool Shoe</h1>
       <div class="form">
-        <%= simple_form_for @shoe do |f| %>
-          <%= f.input :title %>
-          <%= f.input :detail %>
-          <%= f.input :photo_url %>
-          <%= f.input :photo_url_cache, as: :hidden%>
-          <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
-          <%= f.input :moodboard_id, as: :hidden, input_html: { value: params[:moodboard_id] } %>
+        <%= form_for(@shoe) do |f| %>
+          <div class="field">
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+          </div>
+          <div class="field">
+            <%= f.label :detail %>
+            <%= f.text_field :detail %>
+          </div>
+          <div class="field">
+            <%= f.label :shoe_photo %>
+            <%= f.file_field :shoe_photo %>
+          </div>
+          <%= f.text_field :user_id, as: :hidden, input_html: { value: current_user.id } %>
+          <%= f.text_field :moodboard_id, as: :hidden, input_html: { value: params[:moodboard_id] } %>
           <%= f.submit "HIT IT", class: "btn btn-primary" %>
         <% end %>
       </div>

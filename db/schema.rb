@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_101608) do
+ActiveRecord::Schema.define(version: 2019_12_05_112717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_101608) do
     t.bigint "moodboard_id"
     t.bigint "user_id"
     t.integer "votes"
-    t.text "photo_url"
+    t.text "shoe_photo"
     t.text "detail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
