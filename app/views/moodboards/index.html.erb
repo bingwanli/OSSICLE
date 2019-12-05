@@ -28,10 +28,10 @@
             <div class="card-footer">
               <ul class="social">
                 <li><%= link_to moodboard_path(moodboard.id), method: :patch do %>
-                  <i class="far fa-thumbs-up"></i>
+                  <i class="far fa-thumbs-up" data-id=<%= moodboard.id %>></i>
                   <% end %>
                 </li>
-                <li id="votes_number"> <%= moodboard.votes %></li>
+                <li id="votes_number" data-id=<%= moodboard.id %>> <%= moodboard.votes %></li>
               </ul>
               <button class="btn-shoes-cards">
                 <%= link_to "Moodboard", moodboard_path(moodboard.id) %>
@@ -43,22 +43,27 @@
       <% end %>
 
   <script type="text/javascript">
-    // $.get("http://localhost:3000/", function (data) {
-    //     $("#myDiv").html(data);
-    // });
-    let votes_number = document.querySelector('#votes_number')
-    let button = document.querySelectorAll('.far')
-    // 1. declare variable for button
-    // 2. on that button, add an event listener.
-    // 3. on click, increment votes by 1
-    let beep = parseInt(votes_number.innerHTML);
 
-    button.forEach(function(vote){
-      vote.addEventListener('click', () => {
-        beep += 1;
-        votes_number.innerHTML = beep;
-      });
-    });
+    // Variable Declarations
+    let votes = document.querySelectorAll('#votes_number')
+    let buttons = document.querySelectorAll('.far')
+
+    // Custom Functions
+    const like = () => {
+      buttons.forEach((button) => {
+        button.addEventListener('click', (e) => {
+          let buttonId = e.target.dataset.id
+          votes.forEach((vote) => {
+            if (vote.dataset.id === buttonId) {
+              vote.innerText = Number.parseInt(vote.innerText) + 1
+            }
+          })
+        })
+      })
+    };
+
+    // Run Functions
+    like();
 
   </script>
 
