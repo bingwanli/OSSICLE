@@ -1,12 +1,10 @@
-<canvas id="canvas">
   <nav role="navigation">
     <div id="menuToggle">
-
+  <canvas id="canvas" style="z-index: -2">
       <input type="checkbox" />
       <span></span>
       <span></span>
       <span></span>
-
 
       <ul id="menu">
         <a href="#"><li>Home</li></a>
@@ -17,17 +15,10 @@
       </ul>
     </div>
   </nav>
-</canvas>
-
 
  <!-- navbar -->
   <%= render "devise/shared/navbar" %>
-
 <!-- banner -->
-<div>
-  <div class="inside-banner" style="background-image:url('https://cdn.dribbble.com/users/146798/screenshots/4085472/dribbble.gif')">
-  </div>
-</div>
 
 <div class="bottom-container">
 
@@ -54,7 +45,7 @@
   </div>
 
 </div>
-
+</canvas>
 
 <script type="text/javascript">
   const canvasEl = document.querySelector('#canvas');
@@ -126,5 +117,5 @@
   loop();
 </script>
 
-
+</div>
 
