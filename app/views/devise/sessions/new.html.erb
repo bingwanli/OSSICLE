@@ -1,7 +1,13 @@
-<!-- wfwfwefw -->
+<!-- banner -->
+<div>
+  <div class="inside-banner" style="background-image:url('https://cdn.dribbble.com/users/146798/screenshots/4085472/dribbble.gif')">
+  </div>
+</div>
+
 
 <body>
 
+<!-- nav bar -->
   <nav role="navigation">
     <div id="menuToggle">
 
@@ -21,6 +27,7 @@
     </div>
   </nav>
 
+<!-- sign in form -->
 <div class="bottom-container">
 
   <div class="login-menu">
@@ -43,10 +50,12 @@
         </div>
 
       <% end %>
-    </div>
+  <%= render "devise/shared/links" %>
+  </div>
 
 </div>
 
 </body>
 
-<%= render "devise/shared/links" %>
+
+
