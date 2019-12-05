@@ -5,4 +5,5 @@ class Shoe < ApplicationRecord
   validates :photo_url, presence: true, uniqueness: true
   validates :detail, presence: true
   validates :moodboard, presence: true
+  mount_uploader :photo_url, ShoePhotoUploader
 end
