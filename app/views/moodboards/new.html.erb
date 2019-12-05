@@ -8,30 +8,29 @@
 </div>
 
 
-
+<!-- mood form -->
 <div class="background">
   <div class='form-container'>
-    <style type="text/css">
-      .demo-droppable {
-        background: #fff;
-        color: #39393a;
-        padding: 100px 0;
-        text-align: center;
-      }
-      .demo-droppable.dragover {
-        background: #00CC71;
-      }
-
-    </style>
-
-    <!-- mood form -->
     <div class="mood-form">
-      <%= simple_form_for @moodboard do |f| %>
-        <%= f.input :title %>
-        <%= f.input :detail %>
-        <%= f.input :shoe_type %>
-        <%= f.input :photos, class: "photo" %>
-
+      <%= form_for(@moodboard, :html => { :multipart => true }) do |f| %>
+        <div class="field">
+          <%= f.label :title %>
+          <%= f.text_field :title %>
+        </div>
+        <div class="field">
+          <%= f.label :detail %>
+          <%= f.text_field :detail %>
+        </div>
+        <div class="field">
+          <%= f.label :shoe_type %>
+          <%= f.text_field :shoe_type %>
+        </div>
+        <div class="image_fields">
+          <%= f.fields_for :moodboard_attachments do |m| %>
+            <%= m.label :image %>
+            <%= m.file_field :image, :multiple => true, name: "moodboard_attachments[image][]" %>
+          <% end %>
+        </div>
         <%= f.submit "Share!", class: "form-btn" %>
       <% end %>
     </div>

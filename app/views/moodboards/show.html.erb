@@ -1,20 +1,20 @@
 <!-- nav bar -->
 <%= render "devise/shared/navbar" %>
 <body>
-  <div class="text_container">
-    <div class="bg-text">MOODBOARD</div>
-      <div>
-       <span class="title-box"> <strong><p><%= @moodboard.title %> </strong></p></span><br>
-       <span class="attributes"> <p>👥<br><%= @moodboard.user.name %></p></span>
-       <span class="attributes"> <p>👟<br><%= @moodboard.shoe_type %></p></span>
-       <span class="attributes"> <p>🤍<br><%= @moodboard.votes %></p></span><br>
-      </div>
-      <div>
-       <span class="description-box"> <p> <%= @moodboard.detail %> </p></span>
 
-     </div>
-       <div><%= link_to "Design Shoe", new_moodboard_shoe_path(@moodboard.id), class: "form-btn"  %></div>
-      </div>
+<div class="text_container">
+  <div class="bg-text">MOODBOARD</div>
+    <div>
+     <span class="title-box"> <p><%= @moodboard.title %></p></span><br>
+     <span class="attributes"> <p>👥<br><%= @moodboard.user.name %></p></span>
+     <span class="attributes"> <p>👟<br><%= @moodboard.shoe_type %></p></span>
+     <span class="attributes"> <p>❤️<br><%= @moodboard.votes %></p></span><br>
+    </div>
+    <div>
+     <span class="description-box"> <p> Description: <%= @moodboard.detail %> </p></span>
+
+   </div>
+     <div><%= link_to "Design Shoe", new_moodboard_shoe_path(@moodboard.id), class: "form-btn"  %></div>
     </div>
   </div>
 
@@ -26,6 +26,21 @@
     <div class="parallax bg-image img5"></div>
     <div class="parallax bg-image img6"></div>
   </div>
+
+ <div>
+  <% @moodboard_attachments.each do |attachment| %>
+    <div class="parallax bg-image" style="background-image: url('<%= cl_image_path attachment.image %>')"></div>
+  <% end %>
+</div>
+
+<!-- <div>
+  <div class="parallax bg-image" style="background-image: url('')"></div>
+  <div class="bg-image img2"></div>
+  <div class="parallax bg-image img3"></div>
+  <div class="bg-image img4"></div>
+  <div class="parallax bg-image img5"></div>
+  <div class="parallax bg-image img6"></div>
+</div> -->
 
   <div class="popup-banner">
     <div id="check-shoes">
