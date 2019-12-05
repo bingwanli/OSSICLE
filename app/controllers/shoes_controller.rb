@@ -15,7 +15,7 @@ class ShoesController < ApplicationController
   def show
   end
 
-  def delete
+  def destroy
   end
 
   def edit

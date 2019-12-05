@@ -7,6 +7,7 @@ class MoodboardsController < ApplicationController
 
   def show
     set_moodboard
+    @comments = Comment.where(moodboard_id: params[:id])
   end
 
   def new
@@ -35,7 +36,7 @@ class MoodboardsController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
   end
 
 private

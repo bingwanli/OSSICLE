@@ -1,9 +1,5 @@
-<!-- nav bar -->
-<%= render "devise/shared/navbar" %>
-
-<h1>COMING SOON</h1>
-<p>DESIGNER WILL DESIGN SHOE HERE</p>
-<!-- <style type="text/css">
+<h1>New moodboard</h1>
+<style type="text/css">
   .demo-droppable {
     background: #08c;
     color: #fff;
@@ -41,22 +37,26 @@
         triggerCallback(e, callback);
       });
       ele.appendChild(input);
+
       ele.addEventListener('dragover', function(e) {
         e.preventDefault();
         e.stopPropagation();
         ele.classList.add('dragover');
       });
+
       ele.addEventListener('dragleave', function(e) {
         e.preventDefault();
         e.stopPropagation();
         ele.classList.remove('dragover');
       });
+
       ele.addEventListener('drop', function(e) {
         e.preventDefault();
         e.stopPropagation();
         ele.classList.remove('dragover');
         triggerCallback(e, callback);
       });
+
       ele.addEventListener('click', function() {
         input.value = null;
         input.click();
@@ -80,4 +80,8 @@
 </script>
 
 
- -->
+<%= simple_form_for @moodboard do |f| %>
+  <%= f.input :shoe_type %>
+  <%= f.button :submit %>
+<% end %>
+

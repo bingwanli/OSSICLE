@@ -1,3 +1,5 @@
+<!-- nav bar -->
+<%= render "devise/shared/navbar" %>
 
 <div class="text_container">
   <div class="bg-text">MOODBOARD</div>
@@ -9,6 +11,7 @@
     </div>
     <div>
      <span class="description-box"> <p> Description: <%= @moodboard.detail %> </p></span>
+
    </div>
      <div><%= link_to "Design Shoe", new_moodboard_shoe_path(@moodboard.id), class: "form-btn"  %></div>
     </div>
@@ -44,19 +47,21 @@
   </div>
 </div>
 
+
 <div class="comments-banner">
   <div class="comments-box">
     <h3>Comments box</h3><br>
-    <img src="https://www.recruitguelph.ca/cecs/sites/uoguelph.ca.cecs/files/public/images/what%27s-your-profile_1.jpg" alt="" style="border-radius:100%;width:40px;height:40px; ">
-    <h4>Full name</h4>
-    <p>Comment: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-    <img src="https://www.recruitguelph.ca/cecs/sites/uoguelph.ca.cecs/files/public/images/what%27s-your-profile_1.jpg" alt="" style="border-radius:100%;width:40px;height:40px ">
-    <h4>Full name</h4>
-    <p>Comment: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-    <img src="https://www.recruitguelph.ca/cecs/sites/uoguelph.ca.cecs/files/public/images/what%27s-your-profile_1.jpg" alt="" style="border-radius:100%;width:40px;height:40px ">
-    <h4>Full name</h4>
-    <p>Comment: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <br><%= link_to "Add Comment", new_moodboard_comment_path(@moodboard) %>
+      <div class="comments-box">
+        <% if @comments.empty? %>
+          <div></div>
+        <% else %>
+          <% @comments.each do |comment| %>
+            <img src="https://www.recruitguelph.ca/cecs/sites/uoguelph.ca.cecs/files/public/images/what%27s-your-profile_1.jpg" alt="" style="border-radius:100%;width:40px;height:40px; ">
+            <h4><%= comment.user.name %></h4>
+            <p><%= comment.comment %></p>
+          <% end %>
+        <% end %>
+      </div>
   </div>
 </div>
-
-

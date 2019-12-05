@@ -7,7 +7,6 @@ body
   padding: 0;
   background: #F6F6F6;
   /* make it look decent enough */
-  background: #F6F6F6;
   color: #FFD700;
   font-family: "Avenir Next", "Avenir", sans-serif;
   position: relative;
@@ -19,6 +18,12 @@ body
   padding: 0px 0px;
   margin: 0px 0px;
   color: lightblue;
+}
+
+
+
+.red-heart {
+  color: red;
 }
 
 .shoes-cards {
@@ -78,6 +83,8 @@ a:hover {
 .row {
   margin-top: 50px;
 }
+
+// like button stuff
 
 
 // test=====
