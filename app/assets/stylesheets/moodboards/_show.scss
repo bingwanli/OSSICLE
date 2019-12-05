@@ -32,8 +32,8 @@ body, html {
   width: 140px;
   margin: 25px;
   position: absolute;
-  animation: spin 0.5s;
-  animation-iteration-count: infinite;
+  // animation: spin 0.5s;
+  // animation-iteration-count: infinite;
 }
 
 .btn-shoes-pop-up:hover {
@@ -41,22 +41,22 @@ body, html {
   text-decoration: none;
   color: black;
   // border: 1px solid #FFD700;
-  animation: none;
-  // animation-iteration-count: infinite;
+  animation: spin 0.5s;
+  animation-iteration-count: infinite;
 
 }
 
 @keyframes spin {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-100deg); }
+  0% { transform: translate(1px, 1px) rotate(0.5deg); }
+  10% { transform: translate(-1px, -2px) rotate(0deg); }
   20% { transform: translate(-3px, 0px) rotate(0deg); }
-  30% { transform: translate(3px, 2px) rotate(-100deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
   40% { transform: translate(1px, -1px) rotate(0deg); }
-  50% { transform: translate(-1px, 2px) rotate(-100deg); }
+  50% { transform: translate(-1px, 2px) rotate(0deg); }
   60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-100deg); }
+  70% { transform: translate(3px, 1px) rotate(0deg); }
   80% { transform: translate(-1px, -1px) rotate(0deg); }
-  90% { transform: translate(1px, 2px) rotate(-100deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(0deg); }
 }
 
@@ -68,7 +68,7 @@ body, html {
 }
 
 .parallax {
-  height: 400px;
+  height: 100vh;
   background-attachment: fixed;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -124,6 +124,7 @@ body, html {
 
 
 .box {
+  height: 100%;
   margin: 0 auto;
   padding: 35px;
   border-radius: 20px/50px;
@@ -184,14 +185,14 @@ body, html {
   // overflow: auto;
 }
 
-.check-shoes {
+#check-shoes {
   text-align: center;
-  padding: 125px;
-  height: 400px;
-  display: flex;
+  // display: flex;
   align-items: center;
   text-align: center;
   justify-content: center;
+  width: 100%;
+  padding: 100px;
 }
 
 .text_container {
@@ -207,6 +208,55 @@ body, html {
   height:400px;
   padding: 20px;
   text-align: center;
+}
+
+.popup-banner {
+  height:50%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.comments-banner {
+  height:50%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.comments-box {
+  width:1000px;
+  height:300px;
+  line-height:3em;
+  overflow:scroll;
+  padding:25px;
+  background-color:#F8F8F8;
+  box-shadow: 2px 2px 2px gray;
+  scrollbar-base-color:black;
+  border-radius:10px;
+}
+
+.comments-box h3 {
+  font-size: 40px;
+  color: #FFD802;
+  align-items: center;
+  text-align: center;
+}
+
+.comments-box h4 {
+  font-size: 16px;
+  color: black;
+}
+
+.comments-box p {
+  font-size: 14px;
+  color: black;
 }
 
 
