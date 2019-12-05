@@ -28,15 +28,11 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://cdn.dribbble.com/users/1755078/screenshots/6531770/__20_2x_4x.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://cdn.dribbble.com/users/3460/screenshots/1585477/dropkicks.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://cdn.dribbble.com/users/1244874/screenshots/3607356/kinney_shoes.png" class="d-block w-100" alt="...">
-          </div>
+          <% current_user.shoes.each do |shoe| %>
+            <div class="carousel-item active">
+              <%= cl_image_tag shoe.image %>
+            </div>
+          <% end %>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
