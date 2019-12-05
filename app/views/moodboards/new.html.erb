@@ -1,7 +1,6 @@
 <div>
   <div class="inside-banner" style="background-image:url('https://cdn.dribbble.com/users/146798/screenshots/4085472/dribbble.gif')">
     <h1>New Moodboard</h1>
-
   </div>
 </div>
 
@@ -36,10 +35,11 @@
       .demo-droppable.dragover {
         background: #00CC71;
       }
+
     </style>
 
     <!-- mood form -->
-    <div class="mood form">
+    <div class="mood-form">
       <%= simple_form_for @moodboard do |f| %>
         <%= f.input :title %>
         <%= f.input :detail %>
