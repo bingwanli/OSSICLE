@@ -1,5 +1,6 @@
 @import "new";
 
+
 body
 {
   margin: 0;
@@ -9,6 +10,7 @@ body
   background: #F6F6F6;
   color: #FFD700;
   font-family: "Avenir Next", "Avenir", sans-serif;
+  position: relative;
 }
 
 .social {
@@ -17,21 +19,6 @@ body
   padding: 0px 0px;
   margin: 0px 0px;
   color: lightblue;
-}
-
-.inside-banner {
-  height: 200px;
-  width: 100%;
-  background-image: url(https://i.pinimg.com/originals/6b/7c/72/6b7c72de8c9fdb5bbeb5feca23fcc74e.gif);
-  // opacity: 0.6;
-  text-align: center;
-  color: #F6F6F6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-size: cover;
-  background-position:100%;
-  font-weight: bold;
 }
 
 .shoes-cards {
@@ -76,6 +63,10 @@ max-height: 220px;
   justify-content: center;
 }
 
+.btn-shoes-cards:hover {
+  opacity: 0.8;
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -83,13 +74,7 @@ a:hover {
 .card-img-top {
   width: 310px;
   height:220px
-
 }
-
-.btn-shoes-cards:hover {
-  opacity: 0.8;
-}
-
 
 .row {
   margin-top: 50px;

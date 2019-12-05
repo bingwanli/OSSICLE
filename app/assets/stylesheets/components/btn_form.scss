@@ -1,0 +1,17 @@
+.form-btn {
+  color: black;
+  background: #FFD700;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: bold;
+  // display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 140px;
+}
+
+.form-btn:hover {
+  color: black;
+  opacity: 0.8
+}

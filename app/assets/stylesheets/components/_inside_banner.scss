@@ -1,0 +1,29 @@
+// this is the old index-banner
+.inside-banner {
+  height: 300px;
+  width: 100%;
+  background-image: url(https://i.pinimg.com/originals/6b/7c/72/6b7c72de8c9fdb5bbeb5feca23fcc74e.gif);
+  // opacity: 0.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-size: cover;
+  background-position:100%;
+}
+
+
+.inside-banner h1 {
+  color: #FFD802;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 55px;
+  font-weight: bold;
+  // -webkit-text-stroke: 0.1px #FFD802;
+  // border-color: white;
+  text-shadow:
+         3px 3px 0 #000,
+       -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+         1px 1px 0 #000;
+}
