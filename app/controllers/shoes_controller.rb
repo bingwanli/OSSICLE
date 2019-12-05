@@ -8,24 +8,17 @@ class ShoesController < ApplicationController
     @shoe = Shoe.create(shoes_params)
     @shoe.user = current_user
     @shoe.moodboard = Moodboard.find(params[:moodboard_id])
-    @shoe.save
-    redirect_to moodboard_path(params[:moodboard_id])
+    respond_to do |format|
+      if @shoe.save
+        format.html { redirect_to moodboard_path(params[:moodboard_id]), notice: 'Shoe successfully uploaded.'}
+      else
+        format.html { render action: 'new' }
+      end
+    end
   end
 
   def index
     @shoes = Shoe.where(moodboard_id: params[:moodboard_id])
-  end
-
-  def show
-  end
-
-  def destroy
-  end
-
-  def edit
-  end
-
-  def update
   end
 
   private

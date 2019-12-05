@@ -52,7 +52,11 @@
               <div class="carousel-item active">
                 <div class="flex">
                 <%= shoe.user.name %>
-                <%= shoe.user.prof_pic %>
+                <% if shoe.user.prof_pic.nil?  %>
+                  <%= image_tag "http://cf.ltkcdn.net/socialnetworking/images/std/168646-425x425-Cat-Avatar-Primary.jpg", class: "avatar" %>
+                <% else %>
+                  <%= cl_image_tag shoe.user.prof_pic.filename, class: "avatar" %>
+                <% end %>
                 </div>
                 <h3><%= shoe.title %></h3>
                 <%= cl_image_tag shoe.image  %>
