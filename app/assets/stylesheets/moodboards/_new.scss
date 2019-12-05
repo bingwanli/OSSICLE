@@ -1,15 +1,18 @@
-  .demo-droppable {
-    background: #fff;
-    color: #39393a;
-    padding: 100px 0;
-    text-align: center;
-  }
-  .demo-droppable.dragover {
-    background: #00CC71;
-  }
+.demo-droppable {
+  background: #fff;
+  color: #39393a;
+  padding: 100px 0;
+  text-align: center;
+}
+.demo-droppable.dragover {
+  background: #00CC71;
+}
 
-  .form-container {
-    margin: 100px;
-  }
+.form-container {
+  margin: 100px;
+}
 
+.mood-form {
+  width: 400px;
+}
 

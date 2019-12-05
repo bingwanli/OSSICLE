@@ -1,5 +1,3 @@
-<!-- wfwfwefw -->
-<body>
 <canvas id="canvas">
   <nav role="navigation">
     <div id="menuToggle">
@@ -20,6 +18,17 @@
     </div>
   </nav>
 </canvas>
+
+
+ <!-- navbar -->
+  <%= render "devise/shared/navbar" %>
+
+<!-- banner -->
+<div>
+  <div class="inside-banner" style="background-image:url('https://cdn.dribbble.com/users/146798/screenshots/4085472/dribbble.gif')">
+  </div>
+</div>
+
 <div class="bottom-container">
 
   <div class="login-menu">
@@ -40,13 +49,11 @@
             <%= f.button :submit, "Log in" %>
           </div>
         </div>
-
       <% end %>
-    </div>
+  <%= render "devise/shared/links" %>
+  </div>
 
 </div>
-
-</body>
 
 
 <script type="text/javascript">
@@ -119,6 +126,5 @@
   loop();
 </script>
 
-<%= render "devise/shared/links" %>
 
 
