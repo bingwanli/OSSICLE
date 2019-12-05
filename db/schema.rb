@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_040614) do
+ActiveRecord::Schema.define(version: 2019_12_05_075718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 2019_12_05_040614) do
     t.datetime "updated_at", null: false
     t.index ["moodboard_id"], name: "index_comments_on_moodboard_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "moodboard_attachments", force: :cascade do |t|
+    t.bigint "moodboard_id"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["moodboard_id"], name: "index_moodboard_attachments_on_moodboard_id"
   end
 
   create_table "moodboards", force: :cascade do |t|
@@ -97,6 +105,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_040614) do
 
   add_foreign_key "comments", "moodboards"
   add_foreign_key "comments", "users"
+  add_foreign_key "moodboard_attachments", "moodboards"
   add_foreign_key "moodboards", "users"
   add_foreign_key "shoes", "moodboards"
   add_foreign_key "shoes", "users"

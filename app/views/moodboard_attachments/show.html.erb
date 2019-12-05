@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Moodboard:</strong>
+  <%= @moodboard_attachment.moodboard %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @moodboard_attachment.image %>
+</p>
+
+<%= link_to 'Edit', edit_moodboard_attachment_path(@moodboard_attachment) %> |
+<%= link_to 'Back', moodboard_attachments_path %>
