@@ -39,6 +39,36 @@
 
 // }
 //frwfrfrfre
+
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+canvas {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.title {
+  position: absolute;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+
+  font-family: 'Helvetica';
+  line-height: 100vh;
+  text-transform: uppercase;
+  font-weight: lighter;
+  color: #ccc;
+  text-align: center;
+}
+
 #login-background {
   margin: 20px;
   background-image: url("https://www.countryoutfitter.com/dw/image/v2/BBCT_PRD/on/demandware.static/-/Sites-master-product-catalog-shp/default/dwfc9d2018/images/607/2000224607_900_BM.JPG?sw=980&sh=980&sm=fit");
@@ -112,3 +142,5 @@
   top: 0;
   width: 70%;
 }
+
+
