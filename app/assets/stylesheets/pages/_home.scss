@@ -156,14 +156,15 @@ body
 //   transform: none;
 // }
 
-
 .banner {
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  padding-top: 0;
   height: 100vh;
   text-align: center;
 }
+
 
 // #main-navbar {
 //   text-color: white;
