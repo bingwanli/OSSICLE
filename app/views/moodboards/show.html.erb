@@ -1,67 +1,69 @@
 <!-- nav bar -->
 <%= render "devise/shared/navbar" %>
+<body>
+  <div class="text_container">
+    <div class="bg-text">MOODBOARD</div>
+      <div>
+       <span class="title-box"> <strong><p><%= @moodboard.title %> </strong></p></span><br>
+       <span class="attributes"> <p>👥<br><%= @moodboard.user.name %></p></span>
+       <span class="attributes"> <p>👟<br><%= @moodboard.shoe_type %></p></span>
+       <span class="attributes"> <p>🤍<br><%= @moodboard.votes %></p></span><br>
+      </div>
+      <div>
+       <span class="description-box"> <p> <%= @moodboard.detail %> </p></span>
 
-<div class="text_container">
-  <div class="bg-text">MOODBOARD</div>
-    <div>
-     <span class="title-box"> <p><%= @moodboard.title %></p></span><br>
-     <span class="attributes"> <p>👥<br><%= @moodboard.user.name %></p></span>
-     <span class="attributes"> <p>👟<br><%= @moodboard.shoe_type %></p></span>
-     <span class="attributes"> <p>🤍<br><%= @moodboard.votes %></p></span><br>
-    </div>
-    <div>
-     <span class="description-box"> <p> Description: <%= @moodboard.detail %> </p></span>
-
-   </div>
-     <div><%= link_to "Design Shoe", new_moodboard_shoe_path(@moodboard.id), class: "form-btn"  %></div>
+     </div>
+       <div><%= link_to "Design Shoe", new_moodboard_shoe_path(@moodboard.id), class: "form-btn"  %></div>
+      </div>
     </div>
   </div>
-</div>
 
-<div>
-  <div class="parallax bg-image" style="background-image: url('<%= cl_image_path @moodboard.photos %>')"></div>
-  <div class="bg-image img2"></div>
-  <div class="parallax bg-image img3"></div>
-  <div class="bg-image img4"></div>
-  <div class="parallax bg-image img5"></div>
-  <div class="parallax bg-image img6"></div>
-</div>
+  <div>
+    <div class="parallax bg-image" style="background-image: url('<%= cl_image_path @moodboard.photos %>')"></div>
+    <div class="bg-image img2"></div>
+    <div class="parallax bg-image img3"></div>
+    <div class="bg-image img4"></div>
+    <div class="parallax bg-image img5"></div>
+    <div class="parallax bg-image img6"></div>
+  </div>
 
-<div class="popup-banner">
-  <div id="check-shoes">
-    <h2 style="text-align: center">Check the shoes projects</h2>
-    <!-- <div class="box"> -->
-      <div>
-        <a class="form-btn" href="#popup1">Shoe me</a>
-    <!-- </div> -->
-      </div>
-    <div id="popup1" class="overlay">
-      <div class="popup">
-        <h2>NEW SHOES</h2>
-        <a class="close" href="#">&times;</a>
-        <div class="content">
-          <img style="max-width:100%"src="https://cdn.dribbble.com/users/458522/screenshots/6157567/snickers_set_no.1.jpg" alt="Shoes">
+  <div class="popup-banner">
+    <div id="check-shoes">
+      <h2 style="text-align: center">Check the shoes projects <br><br> 👟🎨</h2> <br><br><br>
+      <!-- <div class="box"> -->
+        <div>
+          <a class="form-btn" href="#popup1">Shoe me</a>
+      <!-- </div> -->
+        </div>
+      <div id="popup1" class="overlay">
+        <div class="popup">
+          <h2>NEW SHOES</h2>
+          <a class="close" href="#">&times;</a>
+          <div class="content">
+            <img style="max-width:100%"src="https://cdn.dribbble.com/users/458522/screenshots/6157567/snickers_set_no.1.jpg" alt="Shoes">
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
 
-<div class="comments-banner">
-  <div class="comments-box">
-    <h3>Comments box</h3><br>
-    <br><%= link_to "Add Comment", new_moodboard_comment_path(@moodboard) %>
-      <div class="comments-box">
-        <% if @comments.empty? %>
-          <div></div>
-        <% else %>
-          <% @comments.each do |comment| %>
-            <img src="https://www.recruitguelph.ca/cecs/sites/uoguelph.ca.cecs/files/public/images/what%27s-your-profile_1.jpg" alt="" style="border-radius:100%;width:40px;height:40px; ">
-            <h4><%= comment.user.name %></h4>
-            <p><%= comment.comment %></p>
+  <div class="comments-banner">
+    <div class="comments-box">
+      <h3>Comments box</h3>
+       <%= link_to "+ Add Comment", new_moodboard_comment_path(@moodboard) %> <br>
+        <!-- <div class="comments-box"> -->
+          <% if @comments.empty? %>
+            <div></div>
+          <% else %>
+            <% @comments.each do |comment| %>
+              <img src="https://www.recruitguelph.ca/cecs/sites/uoguelph.ca.cecs/files/public/images/what%27s-your-profile_1.jpg" alt="" style="border-radius:100%;width:40px;height:40px; ">
+              <h4><%= comment.user.name %></h4>
+              <p><%= comment.comment %></p>
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
+        </div>
+    </div>
   </div>
-</div>
+</body>
+  <%= render "devise/shared/footer" %>

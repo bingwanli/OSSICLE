@@ -110,13 +110,10 @@ body, html {
   background: rgba(204, 204, 204, 0.5);
   border-radius: 2%;
   display: inline-block;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
   overflow:scroll;
-  scrollbar-base-color:#FFD700;
   margin: 20px;
-  color: #39393A;
+  color: #FFD700;
+  padding: 10px;
 }
 
 // width:1000px;
@@ -282,6 +279,10 @@ body, html {
   text-align: center;
   justify-content: center;
   width: 100%;
+}
+
+.popup-banner:hover {
+  background: rgba(204, 204, 204, 0.1);
 }
 
 .comments-banner {
