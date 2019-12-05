@@ -1,83 +1,34 @@
 <!-- nav bar -->
 <%= render "devise/shared/navbar" %>
 
-<h1>COMING SOON</h1>
-<p>DESIGNER WILL DESIGN SHOE HERE</p>
-<!-- <style type="text/css">
-  .demo-droppable {
-    background: #08c;
-    color: #fff;
-    padding: 100px 0;
-    text-align: center;
-  }
-  .demo-droppable.dragover {
-    background: #00CC71;
-  }
-</style>
-<div class="demo-droppable">
-  <p>Drag files here or click to upload</p>
-<input type="file" multiple="true" style="display: none;"></div>
-<div class="output"></div>
-<script type="text/javascript">
-  (function(window) {
-    function triggerCallback(e, callback) {
-      if(!callback || typeof callback !== 'function') {
-        return;
-      }
-      var files;
-      if(e.dataTransfer) {
-        files = e.dataTransfer.files;
-      } else if(e.target) {
-        files = e.target.files;
-      }
-      callback.call(null, files);
-    }
-    function makeDroppable(ele, callback) {
-      var input = document.createElement('input');
-      input.setAttribute('type', 'file');
-      input.setAttribute('multiple', true);
-      input.style.display = 'none';
-      input.addEventListener('change', function(e) {
-        triggerCallback(e, callback);
-      });
-      ele.appendChild(input);
-      ele.addEventListener('dragover', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        ele.classList.add('dragover');
-      });
-      ele.addEventListener('dragleave', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        ele.classList.remove('dragover');
-      });
-      ele.addEventListener('drop', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        ele.classList.remove('dragover');
-        triggerCallback(e, callback);
-      });
-      ele.addEventListener('click', function() {
-        input.value = null;
-        input.click();
-      });
-    }
-    window.makeDroppable = makeDroppable;
-  })(this);
-  (function(window) {
-    makeDroppable(window.document.querySelector('.demo-droppable'), function(files) {
-      console.log(files);
-      var output = document.querySelector('.output');
-      output.innerHTML = '';
-      for(var i=0; i<files.length; i++) {
-        if(files[i].type.indexOf('image/') === 0) {
-          output.innerHTML += '<img width="200" src="' + URL.createObjectURL(files[i]) + '" />';
-        }
-        output.innerHTML += '<p>'+files[i].name+'</p>';
-      }
-    });
-  })(this);
-</script>
+<% if user_signed_in? && current_user.portfolio != nil %>
+
+  <!-- new shoe form -->
+  <div class="container mx-auto mt-3">
+    <h1 class="text-center">Design Your Cool Shoe</h1>
+      <div class="form">
+        <%= form_for(@shoe) do |f| %>
+          <div class="field">
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+          </div>
+          <div class="field">
+            <%= f.label :detail %>
+            <%= f.text_field :detail %>
+          </div>
+          <div class="field">
+            <%= f.label :shoe_photo %>
+            <%= f.file_field :shoe_photo %>
+          </div>
+          <%= f.text_field :user_id, as: :hidden, input_html: { value: current_user.id } %>
+          <%= f.text_field :moodboard_id, as: :hidden, input_html: { value: params[:moodboard_id] } %>
+          <%= f.submit "HIT IT", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+  </div>
 
 
- -->
+<% else %>
+<!-- NEED TO FIGURE OUT IF THERE'S ANOTHER SIGN IN TO JUST ADD PORTFOLIO -->
+  <%= link_to "Add your portfolio to become a designer", edit_user_registration_path %>
+<% end %>
