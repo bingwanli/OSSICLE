@@ -228,8 +228,8 @@ DEPENDENCIES
   acts-as-taggable-on (~> 6.0)
   autoprefixer-rails
   bootsnap
-  carrierwave (~> 1.2)
   bootstrap (~> 4.3.1)
+  carrierwave (~> 1.2)
   cloudinary (~> 1.9.1)
   devise
   dotenv-rails
