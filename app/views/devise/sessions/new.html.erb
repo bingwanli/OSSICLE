@@ -1,33 +1,13 @@
+
+ <!-- navbar -->
+  <%= render "devise/shared/navbar" %>
+
 <!-- banner -->
 <div>
   <div class="inside-banner" style="background-image:url('https://cdn.dribbble.com/users/146798/screenshots/4085472/dribbble.gif')">
   </div>
 </div>
 
-
-<body>
-
-<!-- nav bar -->
-  <nav role="navigation">
-    <div id="menuToggle">
-
-      <input type="checkbox" />
-      <span></span>
-      <span></span>
-      <span></span>
-
-
-      <ul id="menu">
-        <a href="#"><li>Home</li></a>
-        <a href="#"><li>Shoes</li></a>
-        <a href="#"><li>Contact</li></a>
-        <a href="#"><li>Profile</li></a>
-        <a href="https://erikterwan.com/" target="_blank"><li>Show me more</li></a>
-      </ul>
-    </div>
-  </nav>
-
-<!-- sign in form -->
 <div class="bottom-container">
 
   <div class="login-menu">
@@ -48,14 +28,9 @@
             <%= f.button :submit, "Log in" %>
           </div>
         </div>
-
       <% end %>
   <%= render "devise/shared/links" %>
   </div>
 
 </div>
-
-</body>
-
-
 

@@ -1,5 +1,6 @@
 class Moodboard < ApplicationRecord
   belongs_to :user
+  has_many :comments
 
   validates :shoe_type, presence: true
   validates :is_finished, inclusion: { in: [true, false] }
@@ -7,4 +8,4 @@ class Moodboard < ApplicationRecord
   validates :detail, presence: true
 
   mount_uploader :photos, PhotoUploader
-  end
+end
