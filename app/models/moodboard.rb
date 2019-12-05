@@ -6,6 +6,5 @@ class Moodboard < ApplicationRecord
   validates :votes, numericality: { only_integer: true, allow_nil: true }
   validates :detail, presence: true
 
-  mount_uploader :photo, PhotoUploader
-
-end
+  mount_uploader :photos, PhotoUploader
+  end

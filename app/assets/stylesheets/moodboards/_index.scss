@@ -1,5 +1,6 @@
 @import "new";
 
+
 body
 {
   margin: 0;
@@ -9,26 +10,15 @@ body
   background: #F6F6F6;
   color: #FFD700;
   font-family: "Avenir Next", "Avenir", sans-serif;
+  position: relative;
 }
 
 .social {
   list-style-type: none;
   display: flex;
-}
-
-.inside-banner {
-  height: 200px;
-  width: 100%;
-  background-image: url(https://i.pinimg.com/originals/6b/7c/72/6b7c72de8c9fdb5bbeb5feca23fcc74e.gif);
-  // opacity: 0.6;
-  text-align: center;
-  color: #F6F6F6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-size: cover;
-  background-position:100%;
-  font-weight: bold;
+  padding: 0px 0px;
+  margin: 0px 0px;
+  color: lightblue;
 }
 
 .shoes-cards {
@@ -36,8 +26,30 @@ body
   border-radius: 10px;
   border: 3px solid #F6F6F6;
   background-color: #F6F6F6;
-  margin: 15px;
-  box-shadow: 2px 2px 3px grey;
+  padding: 0px 0px;
+  margin: 15px 5px;
+  box-shadow: 2px 2px 3px rgb(200,200,200);
+}
+
+.card-body {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F6F6F6;
+}
+
+
+.cloudimg {
+border-radius: 10px;
+width: 100%;
+max-height: 220px;
 }
 
 .btn-shoes-cards {
@@ -48,26 +60,26 @@ body
   border-radius: 50px;
   transition: opacity 0.3s ease;
   color: black;
+  justify-content: center;
+}
+
+.btn-shoes-cards:hover {
+  opacity: 0.8;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .card-img-top {
   width: 310px;
   height:220px
-
-}
-
-.btn-shoes-cards:hover {
-  opacity: 0.8;
-  text-decoration: none !important;
-}
-
-.social {
-  color: lightblue;
 }
 
 .row {
   margin-top: 50px;
 }
+
 
 // test=====
 

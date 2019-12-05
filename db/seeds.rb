@@ -6,9 +6,10 @@ Moodboard.destroy_all
 10.times do
 the_moodboard = Moodboard.create({
   user_id: 1,
-  shoe_type: Faker::Dessert.variety,
+  shoe_type: "Nike",
   is_finished: false,
   votes: 0,
+  title: Faker::Dessert.variety
   detail: Faker::TvShows::TheFreshPrinceOfBelAir.quote
 })
 puts the_moodboard

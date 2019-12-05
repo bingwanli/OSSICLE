@@ -1,10 +1,13 @@
 <!-- nav bar -->
-<%= render "/devise/shared/navbar" %>
 
 <!-- top banner -->
 
-<div class="inside-banner mx-auto justify-content-center" >
-  <h1>Moodboards</h1>
+<div>
+  <div class="inside-banner">
+    <h1>Moodboards</h1>
+
+  </div>
+  <br><%= link_to "Add Mood", new_moodboard_path, class: "btn-shoes-pop-up"  %>
 </div>
 
 <!-- upload area -->
@@ -14,31 +17,59 @@
 
       <% @moodboards.each do |moodboard| %>
 
-        <div class="shoes-cards" style="width: 20rem;">
+        <div class="shoes-cards" >
+
           <div class="card-img-top">
-            <%= cl_image_tag moodboard.photo %>
+            <%= cl_image_tag moodboard.photos, :gravity=>"north_west", :crop => "lfill", class: "cloudimg" %>
           </div>
 
           <div class="card-body">
-            <h5 class="card-title"><%= moodboard.shoe_type %></h5>
-            <p class="card-text">Ipsum Lorem</p>
-            <div class="btn-shoes-cards">
-              <%= link_to "Moodboard", moodboard_path(moodboard.id) %>
-            </div>
+            <h5 class="card-title"><%= moodboard.title %></h5>
+            <p class="card-text"><%= moodboard.shoe_type %></p>
           </div>
 
-          <div>
-            <ul class="social">
-              <li><%= link_to moodboard_path(moodboard.id), method: :patch do %>
-                <i class="far fa-thumbs-up"></i>
-                <% end %>
-              </li>
-              <li><%= moodboard.votes %></li>
-              <li></li>
-            </ul>
-          </div>
+            <div class="card-footer">
+              <ul class="social">
+                <li><%= link_to moodboard_path(moodboard.id), method: :patch do %>
+                  <i class="far fa-thumbs-up" data-id=<%= moodboard.id %>></i>
+                  <% end %>
+                </li>
+                <li id="votes_number" data-id=<%= moodboard.id %>> <%= moodboard.votes %></li>
+              </ul>
+              <button class="btn-shoes-cards">
+                <%= link_to "Moodboard", moodboard_path(moodboard.id) %>
+              </button>
+            </div>
+
         </div>
+
       <% end %>
+
+  <script type="text/javascript">
+
+    // Variable Declarations
+    let votes = document.querySelectorAll('#votes_number')
+    let buttons = document.querySelectorAll('.far')
+
+    // Custom Functions
+    const like = () => {
+      buttons.forEach((button) => {
+        button.addEventListener('click', (e) => {
+          let buttonId = e.target.dataset.id
+          votes.forEach((vote) => {
+            if (vote.dataset.id === buttonId) {
+              vote.innerText = Number.parseInt(vote.innerText) + 1
+            }
+          })
+        })
+      })
+    };
+
+    // Run Functions
+    like();
+
+  </script>
+
   </div>
 </div>
 
