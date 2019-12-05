@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :moodboard_attachments
   root to: 'pages#home'
 
 

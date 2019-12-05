@@ -1,7 +1,10 @@
 <!-- nav bar -->
 <%= render "devise/shared/navbar" %>
-<!-- top banner -->
 
+<!-- top banner -->
+<head>
+  <script src="https://unpkg.com/scrollreveal"></script>
+</head>
 <div>
   <div class="inside-banner">
     <h1>Moodboards</h1>
@@ -18,9 +21,11 @@
       <% @moodboards.each do |moodboard| %>
 
         <div class="shoes-cards" >
-
+        <script type="text/javascript">
+          ScrollReveal().reveal('.shoes-cards', { delay: 150, reset: true });
+        </script>
           <div class="card-img-top">
-            <%= cl_image_tag moodboard.photos, :gravity=>"north_west", :crop => "lfill", class: "cloudimg" %>
+            <%= cl_image_tag moodboard.moodboard_attachments.first.image, :gravity=>"north_west", :crop => "lfill", class: "cloudimg" %>
           </div>
 
           <div class="card-body">
@@ -31,7 +36,7 @@
             <div class="card-footer">
               <ul class="social">
                 <li><%= link_to moodboard_path(moodboard.id), method: :patch do %>
-                  <i class="far fa-thumbs-up" data-id=<%= moodboard.id %>></i>
+                  <i class="far fa-heart like-review"  data-id=<%= moodboard.id %>></i>
                   <% end %>
                 </li>
                 <li id="votes_number" data-id=<%= moodboard.id %>> <%= moodboard.votes %></li>
@@ -44,7 +49,7 @@
         </div>
 
       <% end %>
-
+<!-- Like Button functions -->
 
 
   <script type="text/javascript">
@@ -61,6 +66,8 @@
           votes.forEach((vote) => {
             if (vote.dataset.id === buttonId) {
               vote.innerText = Number.parseInt(vote.innerText) + 1
+               button.classList.add('red-heart')
+               button.addAttribute("disabled");
             }
           })
         })
@@ -69,9 +76,12 @@
 
     // Run Functions
     like();
-
+    // like animation
   </script>
+
 
   </div>
 </div>
+  <%= render "devise/shared/footer" %>
+
 
