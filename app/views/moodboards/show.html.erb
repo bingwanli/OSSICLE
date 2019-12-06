@@ -15,7 +15,7 @@
      <span class="description-box">
       <p><strong>Inspiration  <br> </strong> <%= @moodboard.detail %></p>
       <% if @moodboard.tag_list.present? %>
-        <p><% @moodboard.tag_list.each do |tag| %>
+        <p id="tags"><% @moodboard.tag_list.each do |tag| %>
             <%= link_to tag, moodboards_path(tag: tag) %>
           <% end %></p>
       <% end %>
@@ -57,6 +57,7 @@
             <% @shoes.each do |shoe| %>
             <div class="carousel-item">
                 <div class="flex">
+
                 <%= shoe.user.name %>
                 <% if shoe.user.prof_pic.nil?  %>
                   <%= image_tag "http://cf.ltkcdn.net/socialnetworking/images/std/168646-425x425-Cat-Avatar-Primary.jpg", class: "avatar" %>
@@ -64,6 +65,14 @@
                 <% else %>
                   <%= cl_image_tag shoe.user.prof_pic.filename, class: "avatar" %>
                 <% end %>
+
+                  <%= shoe.user.name %>
+                  <% if shoe.user.prof_pic.nil?  %>
+                    <%= image_tag "http://cf.ltkcdn.net/socialnetworking/images/std/168646-425x425-Cat-Avatar-Primary.jpg", class: "avatar" %>
+                  <% else %>
+                    <%= cl_image_tag shoe.user.prof_pic.filename, class: "avatar" %>
+                  <% end %>
+
                 </div>
                 <h3><%= shoe.title %></h3>
                 <%= cl_image_tag shoe.image  %>

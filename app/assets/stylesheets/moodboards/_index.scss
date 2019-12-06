@@ -20,10 +20,34 @@ h1 {
 }
 
 #tags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 300px;
+  overflow: auto;
+  height: 100px;
+
+  // background-color: lightgray;
+  // color: gray;
+  // text-decoration: none;
+  // // width:80px;
+  // border-radius:5px;
+  // display: inline-block;
+  // max-width:80px;
+  // margin: 7px;
+  // word-wrap: break-word;
+  // width: 100%;
+}
+
+#each-tag {
   background-color: lightgray;
   color: gray;
-  text-decoration: none;
-  width: 100px;
+  padding: 3px 3px;
+  margin: 2px 2px;
+  border-radius: 2px;
+  display: inline-block;
+  border-radius: 5px;
 }
 
 .btn-shoes-cards {
@@ -58,7 +82,10 @@ h1 {
   display: block;
   justify-content: center;
   align-items: center;
-  height: 140px;
+  height: 100px;
+  padding: 0;
+  padding-top: 20px;
+
 }
 
 .card-footer {
@@ -90,6 +117,7 @@ max-height: 220px;
   opacity: 0.8;
 }
 
+
 a:hover {
   text-decoration: none;
 }
@@ -102,54 +130,3 @@ a:hover {
 .row {
   margin-top: 50px;
 }
-
-// like button stuff
-
-
-// test=====
-
-// .masonry { /* Masonry container */
-//   column-count: 4;
-//   column-gap: 1em;
-// }
-
-// // .masonry {
-// //   margin: 1.5em auto;
-// //   max-width: 768px;
-// //   column-gap: 1.5em;
-// // }
-
-// /* The Masonry Brick */
-// .item {
-//   background: #fff;
-//   padding: 1em;
-//   margin: 0 0 1.5em;
-// }
-
-// /* Masonry on large screens */
-// @media only screen and (min-width: 1024px) {
-//   .masonry {
-//     column-count: 4;
-//   }
-// }
-
-// /* Masonry on medium-sized screens */
-// @media only screen and (max-width: 1023px) and (min-width: 768px) {
-//   .masonry {
-//     column-count: 3;
-//   }
-// }
-
-// /* Masonry on small screens */
-// @media only screen and (max-width: 767px) and (min-width: 540px) {
-//   .masonry {
-//     column-count: 2;
-//   }
-// }
-
-// .item { /* Masonry bricks or child elements */
-//   background-color: #eee;
-//   display: inline-block;
-//   margin: 0 0 1em;
-//   width: 100%;
-// }

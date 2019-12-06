@@ -242,7 +242,7 @@ body
   margin: 0;
   color: #FFD802;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 55px;
+  font-size: 80px;
   font-weight: bold;
   // -webkit-text-stroke: 0.1px #FFD802;
   // border-color: white;
@@ -255,12 +255,18 @@ body
 }
 
 .banner p {
-  font-size: 20px;
-  color: white;
+  font-size: 26px;
+  color: #000;
   opacity: 0.9;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   margin-bottom: 80;
   font-weight: lighter;
+  text-shadow:
+         1px 1px 0 #FFD802,
+       -1px -1px 0 #FFD802,
+        1px -1px 0 #FFD802,
+        -1px 1px 0 #FFD802,
+         1px 1px 0 #FFD802;
 }
 
 .btn-ghost {
