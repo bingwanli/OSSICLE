@@ -20,15 +20,21 @@
           <% end %></p>
       <% end %>
      </span>
+ <!--     <a class="scroll-arrow" href="#mood-one">▽</a> -->
+     </div>
     </div>
   </div>
 </div>
 
- <div>
+
+ <div id="mood-one">
   <% @moodboard_attachments.each do |attachment| %>
-    <div class="parallax bg-image" style="background-image: url('<%= cl_image_path attachment.image %>')"></div>
+    <div class="parallax bg-image" style="background-image: url('<%= cl_image_path attachment.image %>')">
+    </div>
   <% end %>
 </div>
+
+
 
   <div class="popup-banner">
     <div id="check-shoes">
@@ -56,10 +62,12 @@
           <div class="carousel-inner">
             <% @shoes.each do |shoe| %>
               <div class="carousel-item active">
-                <div class="flex">
+                <div >
                 <%= shoe.user.name %>
                 <% if shoe.user.prof_pic.nil?  %>
+                <div class="flex">
                   <%= image_tag "http://cf.ltkcdn.net/socialnetworking/images/std/168646-425x425-Cat-Avatar-Primary.jpg", class: "avatar" %>
+                </div>
                 <% else %>
                   <%= cl_image_tag shoe.user.prof_pic.filename, class: "avatar" %>
                 <% end %>
@@ -80,7 +88,6 @@
           </a>
         </div>
        <!-- ========================================================CAROUSEL TEST -->
-
         <!-- <div class="popup">
           <h2>NEW SHOES</h2>
           <a class="close" href="#">&times;</a>
