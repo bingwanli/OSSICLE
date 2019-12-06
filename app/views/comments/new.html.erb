@@ -2,7 +2,7 @@
 <p>Find me in app/views/comments/new.html.erb</p>
 
 <%= simple_form_for [@moodboard, @comment] do |f| %>
-  <%= f.input :comment %>
+  <%= f.input :comment, { maxlength: 1000 } %>
   <%= f.input :moodboard_id, as: :hidden, input_html: { value: @moodboard.id} %>
   <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id} %>
   <%= f.submit "Share!" %>

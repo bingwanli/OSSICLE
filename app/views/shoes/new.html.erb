@@ -9,10 +9,10 @@
       <div class="form">
         <%= simple_form_for [@moodboard, @shoe] do |f| %>
           <div class="field">
-            <%= f.input :title %>
+            <%= f.input :title, { maxlength: 300 }%>
           </div>
           <div class="field">
-            <%= f.input :detail %>
+            <%= f.input :detail, { maxlength: 1000 } %>
           </div>
           <div class="field">
             <%= f.file_field :image %>
