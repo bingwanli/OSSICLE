@@ -1,26 +1,23 @@
-<body >
-  <div class="navbar"></div>
+<%= render "devise/shared/navbar" %>
 
+<body >
 <div class="container">
 
 <!-- PROFILE-MENU -->
 
-  <div class="row col-6" style="margin: auto;">
-     <div class="menu" style="margin: auto;">
-      <a class="btn" href="#edit"><i class="fas fa-cog"></i> Edit</a>
-      <a class="btn" href="#"><i class="far fa-bell"></i> Notification</a>
+  <div class="user-panel">
+    <div class="inner-panel" style="text-align: center;">
+      <a class="form-btn" href="#popup1"> Edit Profile</a>
       <a class="btn" href="#">
         <%= cl_image_tag current_user.prof_pic.filename, class: "avatar-large", alt: "avatar-large" %>
       </a>
-      <a class="btn" href="#"><i class="far fa-heart"></i> Saved</a>
-      <a class="btn" href="#"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+      <%= link_to "Delete Account", registration_path(resource_name), class: "form-btn", data: { confirm: "Are you sure?" }, method: :delete %>
     </div>
   </div>
 
 <!-- WORK-CONTAINER -->
-  <div class="work">
+  <div class="work" >
     <div class="row col-6" style="height: 600px; width: 800px; align-items: center;justify-content: center; display: flex;margin: auto; border-color:#39393A;">
-
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -47,45 +44,45 @@
     </div>
   </div>
 
+<!-- POP-UP EDIT FORM -->
 
+  <div id="popup1" class="overlay">
+    <div class="popup">
+    <a class="close" href="#">&times;</a>
+    <div>
 
-</div>
-
-<div class="row col-6" id="edit" style="margin: auto; text-align: center">
-
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= f.error_notification %>
-    <div class="form-inputs">
-      <%= f.input :email, required: true, autofocus: true %>
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-      <% end %>
-      <%= f.input :portfolio,
-                  hint: "add a URL to your portfolio to register as a designer",
-                  required: false,
-                  input_html: { autocomplete: "portfolio" } %>
-      <%= f.input :current_password,
-                  hint: "we need your current password to confirm your changes",
-                  required: true,
-                  input_html: { autocomplete: "current-password" } %>
-      <%= f.input :password,
-                  hint: "leave it blank if you don't want to change it",
-                  required: false,
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: false,
-                  input_html: { autocomplete: "new-password" } %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :email, required: true, autofocus: true %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+        <%= f.input :portfolio,
+                    hint: "To register as a designer, you need to add a URL to your portfolio 😊",
+                    required: false,
+                    input_html: { autocomplete: "portfolio" } %>
+        <p>Upload Avatar</p>
+        <%= f.file_field :prof_pic %>
+        <%= f.input :current_password,
+                    hint: "If you want to change password, please enter your current password",
+                    required: true,
+                    input_html: { autocomplete: "current-password" } %>
+        <%= f.input :password,
+                    hint: "If you don't want to change password, please leave it blank",
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+      </div>
+      <div class="form-btn">
+        <%= f.button :submit, "Update" %>
+      </div>
+    <% end %>
     </div>
-    <div class="form-actions">
-      <%= f.button :submit, "Update" %>
-    </div>
-  <% end %>
-  <div class="block" style="text-align: center">
-  <h3>Cancel my account</h3>
-  <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-  <p><%= link_to "Back", :back %> --></p>
-  </div>
-</div>
+
+<!-- EDIT FORM -->
 
 </body>
 
