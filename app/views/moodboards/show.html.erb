@@ -9,14 +9,20 @@
      <span class="attributes"> <p>👥<br><strong><%= @moodboard.user.name %></strong></p></span>
      <span class="likes"> <p>❤️<br><strong><%= @moodboard.votes %></p></strong></span>
      <span class="attributes"> <p>👟<br><strong><%= @moodboard.shoe_type %></p></strong></span> <br>
-
     </div>
-    <div>
-     <span class="description-box"> <p> <strong>Inspiration  <br> </strong> <%= @moodboard.detail %> </p></span>
 
-   </div>
+    <div>
+     <span class="description-box">
+      <p><strong>Inspiration  <br> </strong> <%= @moodboard.detail %></p>
+      <% if @moodboard.tag_list.present? %>
+        <p><% @moodboard.tag_list.each do |tag| %>
+            <%= link_to tag, moodboards_path(tag: tag) %>
+          <% end %></p>
+      <% end %>
+     </span>
     </div>
   </div>
+</div>
 
  <div>
   <% @moodboard_attachments.each do |attachment| %>
