@@ -400,8 +400,9 @@ body, html {
 }
 
 .comments-box {
-  width:auto;
   // height:;
+  width:60%;
+  height:300px;
   line-height:3em;
   overflow:scroll;
   padding:10px;

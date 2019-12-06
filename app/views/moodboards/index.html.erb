@@ -9,11 +9,14 @@
     <h1>Moodboards</h1>
 
   </div>
-
- <%= link_to "Add Mood", new_moodboard_path, class: "btn-shoes-pop-up"  %>
 <!-- add mood -->
 
 <!-- tags -->
+<%= link_to "Add Mood", new_moodboard_path, class: "btn-shoes-pop-up"  %>
+<!-- tags header -->
+<% if params[:tag].present? %>
+  <center><h1><%= params[:tag] %></h1></center>
+<% end %>
 
 <!-- cards area -->
 

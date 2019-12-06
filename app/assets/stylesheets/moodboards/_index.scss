@@ -12,6 +12,13 @@ body
   position: relative;
 }
 
+h1 {
+  font-weight: 800;
+  color: #39393a;
+  margin-bottom: 30px;
+  margin-top: 25px;
+}
+
 #tags {
   display: flex;
   justify-content: center;
@@ -117,7 +124,7 @@ a:hover {
 
 .card-img-top {
   width: 310px;
-  height:220px
+  height:220px;
 }
 
 .row {
