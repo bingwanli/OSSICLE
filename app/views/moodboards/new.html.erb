@@ -8,36 +8,26 @@
 </div>
 
 
-<!-- mood form -->
-<div class="background">
-  <div class='form-container'>
-    <div class="mood-form">
-      <%= form_for(@moodboard, :html => { :multipart => true }) do |f| %>
-        <div class="field">
-          <%= f.label :title %>
-          <%= f.text_field :title, { maxlength: 30 } %>
+<!-- moodboard form -->
+
+<div class="user-form-wrapper">
+  <h1>Enter Details</h1>
+  <div class="user-form-container">
+    <%= simple_form_for @moodboard, html: { multipart: true } do |f| %>
+      <%= f.input :title %>
+      <%= f.input :detail, { maxlength: 500 } %>
+      <%= f.input :shoe_type, { maxlength: 25 } %>
+      <%= f.input :tag_list %>
+      <%= f.fields_for :moodboard_attachments do |m| %>
+        <div class="file-upload">
+          <%= m.label :image %>
+          <%= m.file_field :image, :multiple => true, name: "moodboard_attachments[image][]" %>
         </div>
-        <div class="field">
-          <%= f.label :detail %>
-          <%= f.text_field :detail, { maxlength: 500 } %>
-        </div>
-        <div class="field">
-          <%= f.label :shoe_type %>
-          <%= f.text_field :shoe_type, { maxlength: 25 } %>
-        </div>
-        <div class="field">
-          <%= f.label :tag_list %>
-          <%= f.text_field :tag_list %>
-        </div>
-        <div class="image_fields">
-          <%= f.fields_for :moodboard_attachments do |m| %>
-            <%= m.label :image %>
-            <%= m.file_field :image, :multiple => true, name: "moodboard_attachments[image][]" %>
-          <% end %>
-        </div>
-        <%= f.submit "Share!", class: "form-btn" %>
       <% end %>
-    </div>
+      <p>
+        <%= f.submit "Share!", class: "btn" %>
+      </p>
+    <% end %>
   </div>
 </div>
 
