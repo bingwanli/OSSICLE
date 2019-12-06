@@ -5,15 +5,16 @@
 <head>
   <script src="https://unpkg.com/scrollreveal"></script>
 </head>
-<div>
+
   <div class="inside-banner">
     <h1>Moodboards</h1>
-
   </div>
-  <br><%= link_to "Add Mood", new_moodboard_path, class: "btn-shoes-pop-up"  %>
-</div>
 
-<!-- upload area -->
+<!-- add mood -->
+<%= link_to "Add Mood", new_moodboard_path, class: "btn-shoes-pop-up"  %>
+<!-- tags -->
+
+<!-- cards area -->
 
 <div class="masonry mx-auto text-center">
   <div class="row mx-auto justify-content-center">
@@ -25,7 +26,7 @@
           </script>
           <div class="card-img-top">
             <% if moodboard.moodboard_attachments.first.nil?  %>
-              <p>Uh oh picture is not loading</p>
+              <h3>Uh oh picture is not loading</h3>
             <% else %>
               <%= cl_image_tag moodboard.moodboard_attachments.first.image, :gravity=>"north_west", :crop => "lfill", class: "cloudimg" %>
             <% end %>
@@ -34,6 +35,15 @@
           <div class="card-body">
             <h5 class="card-title"><%= moodboard.title %></h5>
             <p class="card-text"><%= moodboard.shoe_type %></p>
+            <p>
+              <div style="display: block">
+                <% if moodboard.tag_list.present? %>
+                  <% moodboard.tag_list.each do |tag| %>
+                    <%= link_to tag, moodboards_path(tag: tag) %>
+                  <% end %>
+                <% end %>
+              </div>
+            </p>
           </div>
 
           <div class="card-footer">

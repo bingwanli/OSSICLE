@@ -1,12 +1,16 @@
 class MoodboardsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_moodboard, only: [:show, :edit, :addvote, :destroy]
 
   def index
-    @moodboards = Moodboard.order(votes: :desc)
+    if params[:tag].present?
+      @moodboards = Moodboard.tagged_with(params[:tag])
+    else
+      @moodboards = Moodboard.order(votes: :desc)
+    end
   end
 
   def show
-    set_moodboard
     @comments = Comment.where(moodboard_id: params[:id])
     @moodboard_attachments = @moodboard.moodboard_attachments.all
     @shoes = Shoe.where(moodboard_id: params[:id])
@@ -35,11 +39,9 @@ class MoodboardsController < ApplicationController
   end
 
   def edit
-    set_moodboard
   end
 
   def addvote
-    set_moodboard
     @moodboard.increment(:votes, 1)
     @moodboard.save
   end
@@ -48,6 +50,7 @@ class MoodboardsController < ApplicationController
   end
 
   def destroy
+    @moodboard.destroy
   end
 
 private
@@ -57,7 +60,7 @@ private
   end
 
   def moodboards_params
-    params.require(:moodboard).permit(:shoe_type, :is_finished, :detail, :votes, :title, moodboard_attachments_attributes: [:id, :moodboard_id, :image])
+    params.require(:moodboard).permit(:shoe_type, :is_finished, :detail, :votes, :tag_list, :title, moodboard_attachments_attributes: [:id, :moodboard_id, :image])
   end
 end
 
