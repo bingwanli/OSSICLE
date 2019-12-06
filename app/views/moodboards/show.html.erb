@@ -11,7 +11,16 @@
      <span class="attributes"> <p>❤️<br><%= @moodboard.votes %></p></span><br>
     </div>
     <div>
-     <span class="description-box"> <p> Description: <%= @moodboard.detail %> </p></span>
+     <span class="description-box">
+      <p> Description: <%= @moodboard.detail %>
+      </p>
+      <% if @moodboard.tag_list.present? %>
+        <p><% @moodboard.tag_list.each do |tag| %>
+            <%= link_to tag, moodboards_path(tag: tag) %>
+          <% end %>
+        </p>
+      <% end %>
+     </span>
 
    </div>
      <div><%= link_to "Design Shoe", new_moodboard_shoe_path(@moodboard.id), class: "form-btn"  %></div>
@@ -102,6 +111,5 @@
         </div>
     </div>
   </div>
-
 </body>
   <%= render "devise/shared/footer" %>

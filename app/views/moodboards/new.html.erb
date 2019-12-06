@@ -25,6 +25,10 @@
           <%= f.label :shoe_type %>
           <%= f.text_field :shoe_type %>
         </div>
+        <div class="field">
+          <%= f.label :tag_list %>
+          <%= f.text_field :tag_list %>
+        </div>
         <div class="image_fields">
           <%= f.fields_for :moodboard_attachments do |m| %>
             <%= m.label :image %>
