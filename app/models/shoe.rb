@@ -4,7 +4,7 @@ class Shoe < ApplicationRecord
   mount_uploader :image, ShoePhotoUploader
 
   validates :votes, numericality: { only_integer: true, allow_nil: true }
-  validates :detail, presence: true
+  # validates :detail, presence: true
   validates :moodboard, presence: true
 
 end
