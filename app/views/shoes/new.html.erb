@@ -1,7 +1,7 @@
 <!-- nav bar -->
 <%= render "devise/shared/navbar" %>
 
-<% if user_signed_in? && current_user.portfolio.present? %>
+<% if current_user.try(:portfolio) %>
 
   <!-- new shoe form -->
   <div class="user-form-wrapper">
@@ -24,8 +24,10 @@
 
 
 <% else %>
-<!-- NEED TO FIGURE OUT IF THERE'S ANOTHER SIGN IN TO JUST ADD PORTFOLIO -->
-<div style="border-radius: 10px; display: block; text-align: center; padding: 150px 0px; width: 400px; background-color: #ffd700; margin: auto; height: 300px">
-  <h1><%= link_to "Add your portfolio to become a designer", edit_user_registration_path %></h1>
-</div>
+  <!-- NEED TO FIGURE OUT IF THERE'S ANOTHER SIGN IN TO JUST ADD PORTFOLIO -->
+  <div style="border-radius: 10px; display: block; text-align: center; padding: 150px 0px; width: 400px; background-color: #ffd700; margin: auto; height: 300px">
+
+    <h1><%= link_to "Add your portfolio to become a designer", edit_user_registration_path %></h1>
+
+  </div>
 <% end %>
