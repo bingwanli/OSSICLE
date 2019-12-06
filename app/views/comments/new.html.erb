@@ -1,9 +1,15 @@
-<h1>Comments#new</h1>
-<p>Find me in app/views/comments/new.html.erb</p>
+<!-- navbar -->
+<%= render "devise/shared/navbar" %>
 
-<%= simple_form_for [@moodboard, @comment] do |f| %>
-  <%= f.input :comment, { maxlength: 1000 } %>
-  <%= f.input :moodboard_id, as: :hidden, input_html: { value: @moodboard.id} %>
-  <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id} %>
-  <%= f.submit "Share!" %>
-<% end %>
+<!-- form -->
+<div class="user-form-wrapper">
+  <h1>Add Comment</h1>
+  <div class="user-form-container">
+      <%= simple_form_for [@moodboard, @comment] do |f| %>
+        <%= f.input :comment, { maxlength: 1000 } %>
+        <%= f.input :moodboard_id, as: :hidden, input_html: { value: @moodboard.id} %>
+        <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id} %>
+        <%= f.submit "Share!", class: "btn" %>
+      <% end %>
+  </div>
+</div>
