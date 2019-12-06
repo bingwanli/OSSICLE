@@ -7,7 +7,6 @@
   </div>
 </div>
 
-
 <!-- mood form -->
 <div class="background">
   <div class='form-container'>
@@ -32,7 +31,9 @@
         <div class="image_fields">
           <%= f.fields_for :moodboard_attachments do |m| %>
             <%= m.label :image %>
-            <%= m.file_field :image, :multiple => true, name: "moodboard_attachments[image][]" %>
+            <div class="file-btn">
+              <%= m.file_field :image, :multiple => true, name: "moodboard_attachments[image][]", input_html: { class: "file-btn" } %>
+            </div>
           <% end %>
         </div>
         <%= f.submit "Share!", class: "form-btn" %>
