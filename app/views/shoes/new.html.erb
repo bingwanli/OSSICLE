@@ -1,12 +1,12 @@
 <!-- nav bar -->
 <%= render "devise/shared/navbar" %>
 
-<% if user_signed_in? && current_user.portfolio.present? %>
+<% if current_user.try(:portfolio) %>
 
   <!-- new shoe form -->
-  <div class="container mx-auto mt-3">
-    <h1 class="text-center">Design Your Cool Shoe</h1>
-      <div class="form">
+  <div class="user-form-wrapper">
+    <h1>Design Your Cool Shoe</h1>
+      <div class="user-form-container">
         <%= simple_form_for [@moodboard, @shoe] do |f| %>
           <div class="field">
             <%= f.input :title, { maxlength: 300 }%>
@@ -15,17 +15,19 @@
             <%= f.input :detail, { maxlength: 1000 } %>
           </div>
           <div class="field">
-            <%= f.file_field :image %>
+            <%= f.file_field :image, class: "file-btn" %>
           </div>
-          <%= f.submit "HIT IT", class: "my-3 form-btn" %>
+          <%= f.submit "HIT IT", class: "btn" %>
         <% end %>
       </div>
   </div>
 
 
 <% else %>
-<!-- NEED TO FIGURE OUT IF THERE'S ANOTHER SIGN IN TO JUST ADD PORTFOLIO -->
-<div style="border-radius: 10px; display: block; text-align: center; padding: 150px 0px; width: 400px; background-color: #ffd700; margin: auto; height: 300px">
-  <h1><%= link_to "Add your portfolio to become a designer", edit_user_registration_path %></h1>
-</div>
+  <!-- NEED TO FIGURE OUT IF THERE'S ANOTHER SIGN IN TO JUST ADD PORTFOLIO -->
+  <div style="border-radius: 10px; display: block; text-align: center; padding: 150px 0px; width: 400px; background-color: #ffd700; margin: auto; height: 300px">
+
+    <h1><%= link_to "Add your portfolio to become a designer", edit_user_registration_path %></h1>
+
+  </div>
 <% end %>

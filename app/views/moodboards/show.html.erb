@@ -20,30 +20,24 @@
           <% end %></p>
       <% end %>
      </span>
- <!--     <a class="scroll-arrow" href="#mood-one">▽</a> -->
-     </div>
     </div>
   </div>
 </div>
 
-
- <div id="mood-one">
-  <% @moodboard_attachments.each do |attachment| %>
-    <div class="parallax bg-image" style="background-image: url('<%= cl_image_path attachment.image %>')">
-    </div>
-  <% end %>
-</div>
-
-
+ <div>
+    <% @moodboard_attachments.each do |attachment| %>
+      <div class="parallax bg-image" style="background-image: url('<%= cl_image_path attachment.image %>')"></div>
+    <% end %>
+  </div>
 
   <div class="popup-banner">
     <div id="check-shoes">
-      <h2 style="text-align: center">Check the shoes projects <br><br> 👟🎨</h2> <br><br><br>
+      <h2 style="text-align: center">SHOES<br><br> 👟🎨</h2> <br>
       <!-- <div class="box"> -->
         <div class="btn-line">
-          <div> <a class="form-btn" href="#popup1">Shoe me</a></div>
+          <div> <a class="form-btn" href="#popup1">See Shoes</a></div>
       <!-- </div> -->
-         <div><%= link_to "Design Shoe", new_moodboard_shoe_path(@moodboard.id), class: "form-btn"  %></div>
+         <div><%= link_to "Design Shoes", new_moodboard_shoe_path(@moodboard.id), class: "form-btn"  %></div>
         </div>
 
       <div id="popup1" class="overlay">
@@ -62,12 +56,10 @@
           <div class="carousel-inner">
             <% @shoes.each do |shoe| %>
               <div class="carousel-item active">
-                <div >
+                <div class="flex">
                 <%= shoe.user.name %>
                 <% if shoe.user.prof_pic.nil?  %>
-                <div class="flex">
                   <%= image_tag "http://cf.ltkcdn.net/socialnetworking/images/std/168646-425x425-Cat-Avatar-Primary.jpg", class: "avatar" %>
-                </div>
                 <% else %>
                   <%= cl_image_tag shoe.user.prof_pic.filename, class: "avatar" %>
                 <% end %>
@@ -88,6 +80,7 @@
           </a>
         </div>
        <!-- ========================================================CAROUSEL TEST -->
+
         <!-- <div class="popup">
           <h2>NEW SHOES</h2>
           <a class="close" href="#">&times;</a>
@@ -99,7 +92,7 @@
     </div>
   </div>
 
-
+<!-- comment box -->
   <div class="comments-banner">
     <h3>Comments box</h3>
     <%= link_to "+ Add Comment", new_moodboard_comment_path(@moodboard) %> <br>

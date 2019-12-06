@@ -6,5 +6,4 @@ class Shoe < ApplicationRecord
   validates :votes, numericality: { only_integer: true, allow_nil: true }
   # validates :detail, presence: true
   validates :moodboard, presence: true
-
 end
