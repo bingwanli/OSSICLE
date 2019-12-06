@@ -17,6 +17,17 @@ h1 {
   color: #39393a;
   margin-bottom: 30px;
   margin-top: 25px;
+
+#tags {
+  background-color: lightgray;
+  color: gray;
+  text-decoration: none;
+  width: 100px;
+}
+
+.btn-shoes-cards {
+  text-decoration: none;
+  color: black
 }
 
 .social {
@@ -25,9 +36,8 @@ h1 {
   padding: 0px 0px;
   margin: 0px 0px;
   color: lightblue;
+  padding-left: 18px;
 }
-
-
 
 .red-heart {
   color: red;
@@ -47,7 +57,7 @@ h1 {
   display: block;
   justify-content: center;
   align-items: center;
-  height: 90px;
+  height: 140px;
 }
 
 .card-footer {
@@ -55,6 +65,7 @@ h1 {
   justify-content: space-between;
   align-items: center;
   background-color: #F6F6F6;
+  padding-top: 16px;
 }
 
 .cloudimg {
@@ -66,7 +77,7 @@ max-height: 220px;
 .btn-shoes-cards {
   border: 3px solid #F6F6F6;
   padding: 8px 14px;
-  width: 150px;
+  width: 90px;
   background-color: #FFD700;
   border-radius: 50px;
   transition: opacity 0.3s ease;

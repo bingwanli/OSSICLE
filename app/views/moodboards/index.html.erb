@@ -1,6 +1,5 @@
 <!-- nav bar -->
 <%= render "devise/shared/navbar" %>
-
 <!-- top banner -->
 <head>
   <script src="https://unpkg.com/scrollreveal"></script>
@@ -38,15 +37,13 @@
           <div class="card-body">
             <h5 class="card-title"><%= moodboard.title %></h5>
             <p class="card-text"><%= moodboard.shoe_type %></p>
-            <p>
-              <div style="display: block">
+              <div id="tags">
                 <% if moodboard.tag_list.present? %>
                   <% moodboard.tag_list.each do |tag| %>
-                    <%= link_to tag, moodboards_path(tag: tag) %>
+                   <p> <%= link_to tag, moodboards_path(tag: tag) %> </p>
                   <% end %>
                 <% end %>
               </div>
-            </p>
           </div>
 
           <div class="card-footer">
@@ -57,9 +54,9 @@
               </li>
               <li id="votes_number" data-id=<%= moodboard.id %>> <%= moodboard.votes %></li>
             </ul>
-            <button class="btn-shoes-cards">
-              <%= link_to "Moodboard", moodboard_path(moodboard.id) %>
-            </button>
+            <div class="btn-shoes-cards">
+              <%= link_to "Moods", moodboard_path(moodboard.id) %>
+            </div>
           </div>
 
         </div>

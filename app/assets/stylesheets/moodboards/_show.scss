@@ -10,6 +10,14 @@ body, html {
   box-sizing: border-box;
 }
 
+.btn-line {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+
 .bg-image {
   /* Full height */
   height: 50%;
@@ -17,6 +25,46 @@ body, html {
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.check-btn {
+  color: black;
+  background: #FFD700;
+  margin-top: 20px;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: bold;
+  // display: flex;
+  // align-items: center;
+  // text-align: center;
+  // justify-content: center;
+  width: 140px;
+  margin: 15px;
+  box-shadow: 1px 1px 1px lightgray;
+}
+
+.check-show-btn {
+  color: #FFD700;
+  background: #555556;
+  border: 1px solid #FFD700;
+  margin-top: 20px;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: bold;
+  width: 140px;
+  margin: 15px;
+  box-shadow: 1px 1px 1px lightgray;
+}
+
+.check-show-btn:hover {
+  color: black;
+  opacity: 0.8;
+  color: #FFD700;
+}
+
+.check-btn:hover {
+  color: black;
+  opacity: 0.8
 }
 
 .btn-shoes-pop-up {
