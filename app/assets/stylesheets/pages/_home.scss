@@ -274,7 +274,6 @@ body
   font-weight: bold;
   position: absolute;
   bottom: 0;
-
 }
 
 .btn-ghost:hover {
@@ -282,7 +281,12 @@ body
   color: #FFD700;
 }
 
-
+.scroll-down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
 .btn-shoes-banner:hover {
   color: #FFD700;
