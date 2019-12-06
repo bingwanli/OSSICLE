@@ -7,10 +7,12 @@
 
   <div class="inside-banner">
     <h1>Moodboards</h1>
+
   </div>
 
+ <%= link_to "Add Mood", new_moodboard_path, class: "btn-shoes-pop-up"  %>
 <!-- add mood -->
-<%= link_to "Add Mood", new_moodboard_path, class: "btn-shoes-pop-up"  %>
+
 <!-- tags -->
 
 <!-- cards area -->
@@ -34,14 +36,15 @@
           <div class="card-body">
             <h5 class="card-title"><%= moodboard.title %></h5>
             <p class="card-text"><%= moodboard.shoe_type %></p>
-              <div id="tags">
-                <% if moodboard.tag_list.present? %>
-                  <% moodboard.tag_list.each do |tag| %>
-                   <p> <%= link_to tag, moodboards_path(tag: tag) %> </p>
-                  <% end %>
-                <% end %>
-              </div>
           </div>
+
+          <div id="tags">
+            <% if moodboard.tag_list.present? %>
+              <% moodboard.tag_list.each do |tag| %>
+               <div id="each-tag"> <%= link_to tag, moodboards_path(tag: tag) %> </div>
+              <% end %>
+            <% end %>
+           </div>
 
           <div class="card-footer">
             <ul class="social">
