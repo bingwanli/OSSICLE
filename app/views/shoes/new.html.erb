@@ -1,20 +1,23 @@
 <!-- nav bar -->
 <%= render "devise/shared/navbar" %>
 
-<% if user_signed_in? && current_user.is_designer %>
+<% if user_signed_in? && current_user.portfolio != nil %>
 
   <!-- new shoe form -->
   <div class="container mx-auto mt-3">
     <h1 class="text-center">Design Your Cool Shoe</h1>
       <div class="form">
-        <%= simple_form_for @shoe do |f| %>
-          <%= f.input :title %>
-          <%= f.input :detail %>
-          <%= f.input :photo_url %>
-          <%= f.input :photo_url_cache, as: :hidden%>
-          <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
-          <%= f.input :moodboard_id, as: :hidden, input_html: { value: params[:moodboard_id] } %>
-          <%= f.submit "HIT IT", class: "btn btn-primary" %>
+        <%= simple_form_for [@moodboard, @shoe] do |f| %>
+          <div class="field">
+            <%= f.input :title, { maxlength: 300 }%>
+          </div>
+          <div class="field">
+            <%= f.input :detail, { maxlength: 1000 } %>
+          </div>
+          <div class="field">
+            <%= f.file_field :image %>
+          </div>
+          <%= f.submit "HIT IT", class: "my-3 form-btn" %>
         <% end %>
       </div>
   </div>

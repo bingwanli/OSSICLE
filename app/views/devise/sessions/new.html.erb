@@ -1,27 +1,7 @@
-  <nav role="navigation">
-    <div id="menuToggle">
-  <canvas id="canvas" style="z-index: -2">
-      <input type="checkbox" />
-      <span></span>
-      <span></span>
-      <span></span>
-
-      <ul id="menu">
-        <a href="#"><li>Home</li></a>
-        <a href="#"><li>Shoes</li></a>
-        <a href="#"><li>Contact</li></a>
-        <a href="#"><li>Profile</li></a>
-        <a href="https://erikterwan.com/" target="_blank"><li>Show me more</li></a>
-      </ul>
-    </div>
-  </nav>
-
  <!-- navbar -->
   <%= render "devise/shared/navbar" %>
 <!-- banner -->
-
 <div class="bottom-container">
-
   <div class="login-menu">
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
@@ -43,7 +23,7 @@
       <% end %>
   <%= render "devise/shared/links" %>
   </div>
-
+<canvas id="canvas" style="z-index: -2">
 </div>
 </canvas>
 

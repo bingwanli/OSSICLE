@@ -3,6 +3,20 @@
 
 <div class="container">
 
+<!-- PROFILE-MENU -->
+
+  <div class="row col-6" style="margin: auto;">
+     <div class="menu" style="margin: auto;">
+      <a class="btn" href="#edit"><i class="fas fa-cog"></i> Edit</a>
+      <a class="btn" href="#"><i class="far fa-bell"></i> Notification</a>
+      <a class="btn" href="#">
+        <%= cl_image_tag current_user.prof_pic.filename, class: "avatar-large", alt: "avatar-large" %>
+      </a>
+      <a class="btn" href="#"><i class="far fa-heart"></i> Saved</a>
+      <a class="btn" href="#"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+    </div>
+  </div>
+
 <!-- WORK-CONTAINER -->
   <div class="work">
     <div class="row col-6" style="height: 600px; width: 800px; align-items: center;justify-content: center; display: flex;margin: auto; border-color:#39393A;">
@@ -14,15 +28,11 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://cdn.dribbble.com/users/1755078/screenshots/6531770/__20_2x_4x.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://cdn.dribbble.com/users/3460/screenshots/1585477/dropkicks.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://cdn.dribbble.com/users/1244874/screenshots/3607356/kinney_shoes.png" class="d-block w-100" alt="...">
-          </div>
+          <% current_user.shoes.each do |shoe| %>
+            <div class="carousel-item active">
+              <%= cl_image_tag shoe.image %>
+            </div>
+          <% end %>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -37,20 +47,45 @@
     </div>
   </div>
 
-<!-- PROFILE-MENU -->
 
-  <div class="row col-6" style="margin: auto;">
-     <div class="menu" style="margin: auto;">
-      <a class="btn" href="#"><i class="fas fa-cog"></i> Setting</a>
-      <a class="btn" href="#"><i class="far fa-bell"></i> Notification</a>
-      <a class="btn" href="#">
-        <%= image_tag "https://static.wixstatic.com/media/62f71a_ca1fd476cad64dde87b99b6f957053ff~mv2.jpg/v1/fill/w_540,h_515,al_c,lg_1,q_90/62f71a_ca1fd476cad64dde87b99b6f957053ff~mv2.webp", class: "avatar-large", alt: "avatar-large" %>
-      </a>
-      <a class="btn" href="#"><i class="far fa-heart"></i> Saved</a>
-      <a class="btn" href="#"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
-    </div>
-  </div>
 
 </div>
 
+<div class="row col-6" id="edit" style="margin: auto; text-align: center">
+
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs">
+      <%= f.input :email, required: true, autofocus: true %>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <% end %>
+      <%= f.input :portfolio,
+                  hint: "add a URL to your portfolio to register as a designer",
+                  required: false,
+                  input_html: { autocomplete: "portfolio" } %>
+      <%= f.input :current_password,
+                  hint: "we need your current password to confirm your changes",
+                  required: true,
+                  input_html: { autocomplete: "current-password" } %>
+      <%= f.input :password,
+                  hint: "leave it blank if you don't want to change it",
+                  required: false,
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  required: false,
+                  input_html: { autocomplete: "new-password" } %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, "Update" %>
+    </div>
+  <% end %>
+  <div class="block" style="text-align: center">
+  <h3>Cancel my account</h3>
+  <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+  <p><%= link_to "Back", :back %> --></p>
+  </div>
+</div>
+
 </body>
+

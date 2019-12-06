@@ -9,6 +9,7 @@ class MoodboardsController < ApplicationController
     set_moodboard
     @comments = Comment.where(moodboard_id: params[:id])
     @moodboard_attachments = @moodboard.moodboard_attachments.all
+    @shoes = Shoe.where(moodboard_id: params[:id])
   end
 
   def new

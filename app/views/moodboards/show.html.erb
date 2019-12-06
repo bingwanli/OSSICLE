@@ -24,8 +24,6 @@
   <% end %>
 </div>
 
-
-
   <div class="popup-banner">
     <div id="check-shoes">
       <h2 style="text-align: center">Check the shoes projects <br><br> 👟🎨</h2> <br><br><br>
@@ -48,16 +46,23 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
           </ol>
+          <!-- ADDS PHOTOS ON TOP OF ONE ANOTHER, NEED TO FIX -->
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="https://cdn.dribbble.com/users/2764878/screenshots/5794383/1.5_4x.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="https://cdn.dribbble.com/users/616555/screenshots/5678137/weirdo_4x.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="https://cdn.dribbble.com/users/1025917/screenshots/6935554/travis-scott-pixelwolfie-dribbble.jpg" class="d-block w-100" alt="...">
-            </div>
+            <% @shoes.each do |shoe| %>
+              <div class="carousel-item active">
+                <div class="flex">
+                <%= shoe.user.name %>
+                <% if shoe.user.prof_pic.nil?  %>
+                  <%= image_tag "http://cf.ltkcdn.net/socialnetworking/images/std/168646-425x425-Cat-Avatar-Primary.jpg", class: "avatar" %>
+                <% else %>
+                  <%= cl_image_tag shoe.user.prof_pic.filename, class: "avatar" %>
+                <% end %>
+                </div>
+                <h3><%= shoe.title %></h3>
+                <%= cl_image_tag shoe.image  %>
+                <p><%= shoe.detail %></p>
+              </div>
+            <% end %>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

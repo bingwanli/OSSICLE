@@ -19,36 +19,39 @@
   <div class="row mx-auto justify-content-center">
 
       <% @moodboards.each do |moodboard| %>
-
         <div class="shoes-cards" >
-        <script type="text/javascript">
-          ScrollReveal().reveal('.shoes-cards', { delay: 150, reset: true });
-        </script>
+          <script type="text/javascript">
+            ScrollReveal().reveal('.shoes-cards', { delay: 150, reset: true });
+          </script>
           <div class="card-img-top">
-            <%= cl_image_tag moodboard.moodboard_attachments.first.image, :gravity=>"north_west", :crop => "lfill", class: "cloudimg" %>
-          </div>
+            <% if moodboard.moodboard_attachments.first.nil?  %>
+              <p>Uh oh picture is not loading</p>
+            <% else %>
+              <%= cl_image_tag moodboard.moodboard_attachments.first.image, :gravity=>"north_west", :crop => "lfill", class: "cloudimg" %>
+            <% end %>
+           </div>
 
           <div class="card-body">
             <h5 class="card-title"><%= moodboard.title %></h5>
             <p class="card-text"><%= moodboard.shoe_type %></p>
           </div>
 
-            <div class="card-footer">
-              <ul class="social">
-                <li><%= link_to moodboard_path(moodboard.id), method: :patch do %>
-                  <i class="far fa-heart like-review"  data-id=<%= moodboard.id %>></i>
-                  <% end %>
-                </li>
-                <li id="votes_number" data-id=<%= moodboard.id %>> <%= moodboard.votes %></li>
-              </ul>
-              <button class="btn-shoes-cards">
-                <%= link_to "Moodboard", moodboard_path(moodboard.id) %>
-              </button>
-            </div>
+          <div class="card-footer">
+            <ul class="social">
+              <li><%= link_to moodboard_path(moodboard.id), method: :patch do %>
+                <i class="far fa-heart like-review"  data-id=<%= moodboard.id %>></i>
+                <% end %>
+              </li>
+              <li id="votes_number" data-id=<%= moodboard.id %>> <%= moodboard.votes %></li>
+            </ul>
+            <button class="btn-shoes-cards">
+              <%= link_to "Moodboard", moodboard_path(moodboard.id) %>
+            </button>
+          </div>
 
         </div>
-
       <% end %>
+
 <!-- Like Button functions -->
 
 
@@ -69,7 +72,7 @@
                button.classList.add('red-heart')
                button.addAttribute("disabled");
             }
-          })
+          }, {once : true});
         })
       })
     };
