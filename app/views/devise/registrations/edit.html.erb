@@ -1,19 +1,19 @@
-<body >
-  <div class="navbar"></div>
+<%= render "devise/shared/navbar" %>
 
+<body >
 <div class="container">
 
 <!-- PROFILE-MENU -->
 
-  <div class="row col-6" style="margin: auto;">
-     <div class="menu" style="margin: auto;">
-      <a class="btn" href="#edit"><i class="fas fa-cog"></i> Edit</a>
-      <a class="btn" href="#"><i class="far fa-bell"></i> Notification</a>
+  <div class="user-panel">
+    <div class="inner-panel">
+      <a class="form-btn" href="#popup1"><i class="fas fa-cog"></i> Edit</a>
       <a class="btn" href="#">
         <%= cl_image_tag current_user.prof_pic.filename, class: "avatar-large", alt: "avatar-large" %>
       </a>
       <a class="btn" href="#"><i class="far fa-heart"></i> Saved</a>
       <a class="btn" href="<%= root_path %>"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+      <a class="form-btn" href="#"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
     </div>
   </div>
 
@@ -48,42 +48,43 @@
   </div>
 
 
+<!-- EDIT FORM -->
+  <div class="row col-6" id="edit" style="margin: auto; text-align: center">
 
-</div>
-
-<div class="row col-6" id="edit" style="margin: auto; text-align: center">
-
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= f.error_notification %>
-    <div class="form-inputs">
-      <%= f.input :email, required: true, autofocus: true %>
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-      <% end %>
-      <%= f.input :portfolio,
-                  hint: "add a URL to your portfolio to register as a designer",
-                  required: false,
-                  input_html: { autocomplete: "portfolio" } %>
-      <%= f.input :current_password,
-                  hint: "we need your current password to confirm your changes",
-                  required: true,
-                  input_html: { autocomplete: "current-password" } %>
-      <%= f.input :password,
-                  hint: "leave it blank if you don't want to change it",
-                  required: false,
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: false,
-                  input_html: { autocomplete: "new-password" } %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :email, required: true, autofocus: true %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+        <%= f.input :portfolio,
+                    hint: "add a URL to your portfolio to register as a designer",
+                    required: false,
+                    input_html: { autocomplete: "portfolio" } %>
+        <p>Upload Avatar</p>
+        <%= f.file_field :prof_pic %>
+        <%= f.input :current_password,
+                    hint: "we need your current password to confirm your changes",
+                    required: true,
+                    input_html: { autocomplete: "current-password" } %>
+        <%= f.input :password,
+                    hint: "leave it blank if you don't want to change it",
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, "Update" %>
+      </div>
+    <% end %>
+    <div class="block" style="text-align: center">
+    <h3>Cancel my account</h3>
+    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+    <p><%= link_to "Back", :back %> --></p>
     </div>
-    <div class="form-actions">
-      <%= f.button :submit, "Update" %>
-    </div>
-  <% end %>
-  <div class="block" style="text-align: center">
-  <h3>Cancel my account</h3>
-  <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-  <p><%= link_to "Back", :back %> --></p>
   </div>
 </div>
 

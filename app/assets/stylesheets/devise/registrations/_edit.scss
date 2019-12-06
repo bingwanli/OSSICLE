@@ -4,22 +4,21 @@
 
 }
 
-.main-container {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-.row {
-  margin-top: 50px;
+.user-panel {
+  text-align: center;
+
 }
-.col-6 {
-display:flex;
-justify-content:center;
-align-items:center;
-margin:auto;
-max-width: none
+
+.inner-panel {
+  display: inline-block;
+  margin: auto;
 }
 
 .d-block {
