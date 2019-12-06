@@ -13,7 +13,7 @@
   <h1>Enter Details</h1>
   <div class="user-form-container">
     <%= simple_form_for @moodboard, html: { multipart: true } do |f| %>
-      <%= f.input :title %>
+      <%= f.input :title, { maxlength: 100 }%>
       <%= f.input :detail, { maxlength: 500 } %>
       <%= f.input :shoe_type, { maxlength: 25 } %>
       <%= f.input :tag_list %>
