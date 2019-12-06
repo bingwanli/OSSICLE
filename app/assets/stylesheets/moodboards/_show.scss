@@ -44,8 +44,9 @@ body, html {
 }
 
 .check-show-btn {
-  color: black;
-  background: #FCBA06;
+  color: #FFD700;
+  background: #555556;
+  border: 1px solid #FFD700;
   margin-top: 20px;
   padding: 8px 24px;
   border-radius: 50px;
@@ -57,7 +58,8 @@ body, html {
 
 .check-show-btn:hover {
   color: black;
-  opacity: 0.8
+  opacity: 0.8;
+  color: #FFD700;
 }
 
 .check-btn:hover {
