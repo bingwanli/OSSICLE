@@ -12,15 +12,27 @@ body
   position: relative;
 }
 
+#tags {
+  background-color: lightgray;
+  color: gray;
+  text-decoration: none;
+  width: 100px;
+}
+
+.btn-shoes-cards {
+  text-decoration: none;
+  color: black
+
+}
+
 .social {
   list-style-type: none;
   display: flex;
   padding: 0px 0px;
   margin: 0px 0px;
   color: lightblue;
+  padding-left: 18px;
 }
-
-
 
 .red-heart {
   color: red;
@@ -40,7 +52,7 @@ body
   display: block;
   justify-content: center;
   align-items: center;
-  height: 90px;
+  height: 140px;
 }
 
 .card-footer {
@@ -48,6 +60,7 @@ body
   justify-content: space-between;
   align-items: center;
   background-color: #F6F6F6;
+  padding-top: 16px;
 }
 
 .cloudimg {
@@ -59,7 +72,7 @@ max-height: 220px;
 .btn-shoes-cards {
   border: 3px solid #F6F6F6;
   padding: 8px 14px;
-  width: 150px;
+  width: 90px;
   background-color: #FFD700;
   border-radius: 50px;
   transition: opacity 0.3s ease;
