@@ -40,23 +40,20 @@
          <div><%= link_to "Design Shoes", new_moodboard_shoe_path(@moodboard.id), class: "form-btn"  %></div>
         </div>
 
-      <div id="popup1" class="overlay">
+      <div id="popup1" class="overlay w-100">
         <!-- ========================================================CAROUSEL TEST -->
-        <div class="popup">
+        <div class="popup w-100">
           <h2>SHOES DESIGNS</h2>
           <a class="close" href="#">&times;</a>
-          <div class="content">
-        <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <!-- ADDS PHOTOS ON TOP OF ONE ANOTHER, NEED TO FIX -->
-          <div class="carousel-inner">
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+
+          <div class="carousel-inner w-100">
             <% @shoes.each do |shoe| %>
-              <div class="carousel-item active">
-                <div class="flex">
+              <div class="carousel-item active w-100">
+                <div class="display-flex">
                   <%= shoe.user.name %>
                   <% if shoe.user.prof_pic.nil?  %>
                     <%= image_tag "http://cf.ltkcdn.net/socialnetworking/images/std/168646-425x425-Cat-Avatar-Primary.jpg", class: "avatar" %>
@@ -65,15 +62,12 @@
                   <% end %>
                 </div>
                 <h3><%= shoe.title %></h3>
-                <%= cl_image_tag shoe.image  %>
+                <%= cl_image_tag shoe.image, class: "w-100" %>
                 <p><%= shoe.detail %></p>
               </div>
             <% end %>
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
+
           <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
