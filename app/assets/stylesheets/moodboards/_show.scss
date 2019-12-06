@@ -386,6 +386,8 @@ body, html {
   box-shadow: 1px 1px 2px lightgray;
   border-radius: 3px;
   align-items: center;
+  word-wrap: break-word;
+
 }
 
 .comments-lines p {
@@ -393,6 +395,7 @@ body, html {
   font-size: 14px;
   line-height: 20px;
   text-align: left;
+  word-wrap: break-word;
 }
 
 .comments-lines h4 {
@@ -432,6 +435,7 @@ body, html {
   font-size: 14px;
   color: black;
   padding-right: 20px;
+
 
 }
 
