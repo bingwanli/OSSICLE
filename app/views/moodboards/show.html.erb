@@ -54,12 +54,16 @@
             <% @shoes.each do |shoe| %>
               <div class="carousel-item active w-100">
                 <div class="display-flex">
+            <div class="carousel-item">
+                <div class="flex">
+
                   <%= shoe.user.name %>
                   <% if shoe.user.prof_pic.nil?  %>
                     <%= image_tag "http://cf.ltkcdn.net/socialnetworking/images/std/168646-425x425-Cat-Avatar-Primary.jpg", class: "avatar" %>
                   <% else %>
                     <%= cl_image_tag shoe.user.prof_pic.filename, class: "avatar" %>
                   <% end %>
+
                 </div>
                 <h3><%= shoe.title %></h3>
                 <%= cl_image_tag shoe.image, class: "w-100" %>
@@ -73,6 +77,18 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
+
+        <script type="text/javascript">
+          const change = () => {
+            let active = document.querySelectorAll(".carousel-item")
+            active.forEach((item => {
+              item.classList.add("active");
+              console.log(item)
+              item.previousSibling.classList.remove("active")
+            }));
+          };
+          change();
+        </script>
        <!-- ========================================================CAROUSEL TEST -->
 
         <!-- <div class="popup">
